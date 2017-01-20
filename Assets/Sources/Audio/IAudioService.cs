@@ -5,7 +5,7 @@
         bool fxEnabled { get; set; }
         bool musicEnabled { get; set; }
 
-        void Setup(IPlayerPrefsService playerPrefsService);
+        void Setup();
         void Play(AudioId id);
         void SetBackground(AudioId id);
     }

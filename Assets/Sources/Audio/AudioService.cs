@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CreatingDust.Shared.Extensions;
 using UnityEngine;
 
 namespace CreatingDust.GGJ2017.CrossContext.Services
@@ -15,16 +14,14 @@ namespace CreatingDust.GGJ2017.CrossContext.Services
 
         AudioServiceComponent _audioServiceComponent;
 
-        public bool fxEnabled { get { return _fxEnabled; } set { _fxEnabled = value; SaveData(); } }
-        bool _fxEnabled;
+        public bool fxEnabled { get { return _fxEnabled; } set { _fxEnabled = value; } }
+        bool _fxEnabled = true;
 
-        public bool musicEnabled { get { return _musicEnabled; } set { _musicEnabled = value; SaveData(); CheckBackground(); } }
+        public bool musicEnabled { get { return _musicEnabled; } set { _musicEnabled = value; CheckBackground(); } }
 
-        bool _musicEnabled;
+        bool _musicEnabled = true;
 
-        IPlayerPrefsService _playerPrefsService;
-
-        public void Setup(IPlayerPrefsService playerPrefsService)
+        public void Setup()
         {
             if (_audioServiceComponent == null)
             {                
@@ -35,30 +32,6 @@ namespace CreatingDust.GGJ2017.CrossContext.Services
 
             _fxEnabled = AUDIO_ENABLED_DEFAULT_VALUE;
             _musicEnabled = AUDIO_ENABLED_DEFAULT_VALUE;
-
-            _playerPrefsService = playerPrefsService;
-
-            LoadData();
-        }
-
-        void LoadData()
-        {
-            var data = _playerPrefsService.LoadData(KEY_AUDIO_SERVICE_DATA) as Dictionary<string, object>;
-            if (data != null)
-            {
-                _fxEnabled = data.GetBool(KEY_FX_ENABLED, true);
-                _musicEnabled = data.GetBool(KEY_MUSIC_ENABLED, true);
-            }
-        }
-
-        void SaveData()
-        {
-            var data = new Dictionary<string, object>
-            {
-                { KEY_FX_ENABLED, _fxEnabled },
-                { KEY_MUSIC_ENABLED, _musicEnabled }
-            };
-            _playerPrefsService.SaveData(data, KEY_AUDIO_SERVICE_DATA);
         }
 
         public void Play(AudioId id)

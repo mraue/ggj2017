@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CreatingDust.ZombieMatch.CrossContext.Services
+namespace CreatingDust.GGJ2017.CrossContext.Services
 {
     public class AudioLibrary : MonoBehaviour
     {
