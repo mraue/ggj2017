@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 namespace GGJ2017.Game
 {
-	class GameManager : MonoBehaviour
-	{
-		const string SCENE_ID_BAR_PLAYERS = "BartenderAndCustomers";
-		const string SCENE_ID_BAR_INTERIOR = "BarInterior";
+    class GameManager : MonoBehaviour
+    {
+        const string SCENE_ID_BAR_PLAYERS = "BartenderAndCustomers";
+        const string SCENE_ID_BAR_INTERIOR = "BarInterior";
 
         const float GAME_DURATION = 20f;
 
@@ -108,6 +108,7 @@ namespace GGJ2017.Game
                 _gameStarted = DateTime.Now;
 
                 gameLoopManager = GameObject.FindGameObjectWithTag("GameLoopManager").GetComponent<GameLoopManager>();
+                gameLoopManager.Reset();
                 gameLoopManager.acceptingInput = true;
             }
             else

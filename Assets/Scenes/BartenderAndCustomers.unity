@@ -463,7 +463,7 @@ MonoBehaviour:
   - {fileID: 599347308}
   ignore: 0
   index: 0
-  attentionTime: 120
+  attentionTime: 60
   slerpInterpolation: 0.1
   slerpCurve:
     serializedVersion: 2

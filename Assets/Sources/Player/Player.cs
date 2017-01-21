@@ -7,8 +7,8 @@ namespace GGJ2017.Game
 {
     class Player : MonoBehaviour
     {
-        const float WAVE_DURATION = 3f;
-        const float SERVE_DRINK_DURATION = 3f;
+        const float WAVE_DURATION = 2.0f;
+        const float SERVE_DRINK_DURATION = 3.0f;
 
         public enum State
         {
@@ -88,7 +88,7 @@ namespace GGJ2017.Game
 
         public void ServeDrink()
         {
-            drinksServed += 1;
+            drinksServed++;
             lastDrinkServed = DateTime.Now;
 
             _state = State.DrinkServing;

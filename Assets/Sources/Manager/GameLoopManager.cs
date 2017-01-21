@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GGJ2017.Game
@@ -18,16 +18,16 @@ namespace GGJ2017.Game
 
         public List<HighscoreData> GetHighscoreData()
         {
-            var data = new List<HighscoreData>();
-
-            foreach (var player in players)
-            {
-                data.Add(new HighscoreData { name = string.Format("Player Key {0}", player.assignedKey), score = player.drinksServed.ToString() });
-            }
-
-            data.Sort((x, y) => string.Compare(x.score, y.score, StringComparison.Ordinal));
-
-            return data;
+            return
+                players.OrderByDescending(x => x.drinksServed)
+                    .Select(
+                        player =>
+                            new HighscoreData
+                            {
+                                name = string.Format("Player Key {0}", player.assignedKey),
+                                score = player.drinksServed.ToString()
+                            })
+                    .ToList();
         }
 
         void Update()
@@ -41,6 +41,14 @@ namespace GGJ2017.Game
                         player.ShouldWave();
                     }
                 }
+            }
+        }
+
+        public void Reset()
+        {
+            foreach (Player player in players)
+            {
+                player.drinksServed = 0;
             }
         }
     }
