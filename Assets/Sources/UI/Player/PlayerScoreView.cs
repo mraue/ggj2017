@@ -24,7 +24,7 @@ namespace GGJ2017.Game
 			transform.DOLocalRotate(new Vector3(0f, 360f, 0), 3f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
 		}
 
-		void SetScoreAmount(int value)
+		public void SetScoreAmount(int value)
 		{
 			score = value;
 
