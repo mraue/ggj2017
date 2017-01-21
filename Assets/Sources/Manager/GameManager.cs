@@ -10,7 +10,7 @@ namespace GGJ2017.Game
 {
 	class GameManager : MonoBehaviour
 	{
-		const string SCENE_ID_BAR_PLAYERS = "bar";
+		const string SCENE_ID_BAR_PLAYERS = "BartenderAndCustomers";
 		const string SCENE_ID_BAR_INTERIOR = "BarInterior";
 
 		const float GAME_DURATION = 20f;
