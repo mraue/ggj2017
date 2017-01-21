@@ -11,7 +11,7 @@ namespace GGJ2017.Game
 	class GameManager : MonoBehaviour
 	{
 		const string BAR_SCENE_ID = "bar";
-		const float GAME_DURATION = 5f;
+		const float GAME_DURATION = 20f;
 
 		public enum State
 		{
