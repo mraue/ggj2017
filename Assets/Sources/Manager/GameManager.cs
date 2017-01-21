@@ -28,6 +28,8 @@ namespace GGJ2017.Game
 
 		public TimerViewController timerViewController;
 
+		public ResultsView resultsView;
+
 		State _state;
 
 		DateTime _gameStarted;
@@ -109,11 +111,14 @@ namespace GGJ2017.Game
 
 		public void OnGameFinished()
 		{			
+			gameLoopManager.acceptingInput = false;
+
+			resultsView.Show(gameLoopManager.GetHighscoreData());
+
 			timerViewController.Hide();
 			gameFinishedController.Show();
 
 			_state = State.EndScreen;
-			gameLoopManager.acceptingInput = false;
 		}
 	}
 }

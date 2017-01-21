@@ -9,9 +9,29 @@ namespace GGJ2017.Game
 {
 	class GameLoopManager : MonoBehaviour
 	{
+		public class HighscoreData
+		{
+			public string name;
+			public string score;
+		}
+
 		public Player[] players;
 
 		public bool acceptingInput;
+
+		public List<HighscoreData> GetHighscoreData()
+		{
+			var data = new List<HighscoreData>();
+
+			foreach (var player in players)
+			{
+				data.Add(new HighscoreData { name = string.Format("Player Key {0}", player.assignedKey), score = player.drinksServed.ToString() });
+			}
+
+			data.Sort((x, y) => x.score.CompareTo(y.score));
+
+			return data;
+		}
 
 		void Update()
 		{
