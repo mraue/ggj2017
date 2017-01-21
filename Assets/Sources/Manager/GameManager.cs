@@ -52,7 +52,7 @@ namespace GGJ2017.Game
 
 			_state = State.StartScreen;
 
-			AudioService.instance.SetBackground(AudioId.BarBackground);
+			AudioService.instance.SetBackground(AudioId.StartScreenBackground);
 		}
 
 		void Update()
@@ -63,7 +63,7 @@ namespace GGJ2017.Game
 
 				if (secondsRunning < GAME_DURATION)
 				{
-					timerViewController.label.text = string.Format("{0:D2}", (int)(GAME_DURATION - secondsRunning));
+					timerViewController.label.text = string.Format("{0:D2}", (int)(GAME_DURATION - secondsRunning) + 1);
 				}
 				else
 				{
@@ -91,6 +91,8 @@ namespace GGJ2017.Game
 		{
 			if (_state == State.StartScreen)
 			{
+				AudioService.instance.SetBackground(AudioId.BarBackground);
+
 				startScreenController.Hide();
 				timerViewController.Show();
 
