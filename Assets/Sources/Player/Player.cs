@@ -8,7 +8,7 @@ namespace GGJ2017.Game
 {
 	class Player : MonoBehaviour
 	{
-		const float WAVE_DURATION = 1.5f;
+		const float WAVE_DURATION = 3f;
 		const float SERVE_DRINK_DURATION = 3f;
 
 		public enum State
