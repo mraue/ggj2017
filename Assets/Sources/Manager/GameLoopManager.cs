@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using GGJ2017.CrossContext.Services;
+using System.Linq;
 
 namespace GGJ2017.Game
 {
@@ -15,7 +16,7 @@ namespace GGJ2017.Game
 			public string score;
 		}
 
-		public Player[] players;
+		public List<Player> players;
 
 		public bool acceptingInput;
 
@@ -31,6 +32,20 @@ namespace GGJ2017.Game
 			data.Sort((x, y) => x.score.CompareTo(y.score));
 
 			return data;
+		}
+
+		public void ServeDrink(int id)
+		{
+			var result = players.FindAll((obj) => obj.id == id);
+
+			if (result.Count == 1)
+			{
+				result[0].ServeDrink();
+			}
+			else
+			{
+				Log.ErrorFormat("[GameLoopManager::ServeDrink] Found {0} results for id={1}", result.Count, id);
+			}
 		}
 
 		void Update()
