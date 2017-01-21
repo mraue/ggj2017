@@ -495,7 +495,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  LookAtThreshhold: 0.5
+  LookAtThreshhold: 0.3
 --- !u!1 &997785328 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100028, guid: c86af76270691c841aeddb44bf7df350, type: 3}
