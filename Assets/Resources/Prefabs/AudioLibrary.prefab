@@ -142,3 +142,21 @@ MonoBehaviour:
   - id: 301
     clip: {fileID: 8300000, guid: 5e7f2be9b66893f478d786e0f575a9f6, type: 3}
     volume: 1
+  - id: 104
+    clip: {fileID: 8300000, guid: 7a52b59734957344687550ccab837ef3, type: 3}
+    volume: 1
+  - id: 104
+    clip: {fileID: 8300000, guid: f5b98f307fb86614d8282e70c8238ba9, type: 3}
+    volume: 1
+  - id: 104
+    clip: {fileID: 8300000, guid: eb1cd2adeb84e914698ded4cae5148f8, type: 3}
+    volume: 1
+  - id: 105
+    clip: {fileID: 8300000, guid: 8207f2f5bb29cbe4081f8c5dfe39bfe7, type: 3}
+    volume: 1
+  - id: 105
+    clip: {fileID: 8300000, guid: 70d57564d1e5fe046a271b72e7eda1b5, type: 3}
+    volume: 1
+  - id: 105
+    clip: {fileID: 8300000, guid: bd54d0b5240d96142a884bbee11a9fcf, type: 3}
+    volume: 1
