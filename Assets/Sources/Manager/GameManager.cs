@@ -11,7 +11,7 @@ namespace GGJ2017.Game
 	class GameManager : MonoBehaviour
 	{
 		const string SCENE_ID_BAR_PLAYERS = "bar";
-		const string SCENE_ID_BAR_INTERIOR = "BarScene";
+		const string SCENE_ID_BAR_INTERIOR = "BarInterior";
 
 		const float GAME_DURATION = 20f;
 
@@ -23,7 +23,7 @@ namespace GGJ2017.Game
 			EndScreen,
 		}
 
-		List<string> _scenesToLoad = new List<string> { SCENE_ID_BAR_PLAYERS, SCENE_ID_BAR_INTERIOR };
+		List<string> _scenesToLoad = new List<string> { SCENE_ID_BAR_INTERIOR, SCENE_ID_BAR_PLAYERS };
 
 		public GameLoopManager gameLoopManager;
 
