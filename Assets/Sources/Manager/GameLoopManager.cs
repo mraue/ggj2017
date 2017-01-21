@@ -12,6 +12,16 @@ namespace GGJ2017.Game
 
 		public bool acceptingInput;
 
+		void Awake()
+		{
+			Setup();
+		}
+
+		void Setup()
+		{
+			Log.logHandler = Debug.Log;
+		}
+
 		void Update()
 		{
 			if(acceptingInput)
