@@ -1,103 +1,107 @@
-﻿using System.Collections.Generic;
+﻿using GGJ2017.CrossContext.Services;
 using GGJ2017.Shared.Logging;
-using UnityEngine;
-using DG.Tweening;
 using System;
-using GGJ2017.CrossContext.Services;
+using UnityEngine;
 
 namespace GGJ2017.Game
 {
-	class Player : MonoBehaviour
-	{
-		const float WAVE_DURATION = 3f;
-		const float SERVE_DRINK_DURATION = 3f;
+    class Player : MonoBehaviour
+    {
+        const float WAVE_DURATION = 3f;
+        const float SERVE_DRINK_DURATION = 3f;
 
-		public enum State
-		{
-			None = 0,
-			Idle = 1,
-			Waving = 2,
-			DrinkServing = 3,
-		}
+        public enum State
+        {
+            None = 0,
+            Idle = 1,
+            Waving = 2,
+            DrinkServing = 3,
+        }
 
-		public KeyCode assignedKey;
+        public KeyCode assignedKey;
 
-		public int drinksServed;
+        public int drinksServed;
 
-		public DateTime lastDrinkServed;
+        public DateTime lastDrinkServed;
 
-		public int id;// Zero base, player one has id=0
+        public int id;// Zero base, player one has id=0
 
-		public State state { get { return _state; } }
-		State _state;
+        public State state { get { return _state; } }
+        State _state;
 
-		void Awake()
-		{
-			_state = State.Idle;
-		}
+        private Animator anim;
 
-		public void ShouldWave()
-		{
-			Log.InfoFormat("Player {0} should wave", assignedKey);
-			if (_state == State.Idle)
-			{
-				Wave();
-			}
-		}
+        void Awake()
+        {
+            _state = State.Idle;
+            anim = GetComponent<Animator>();
+        }
 
-		void Wave()
-		{
-			Log.InfoFormat("Player {0} starts waving", assignedKey);
+        public void ShouldWave()
+        {
+            Log.InfoFormat("Player {0} should wave", assignedKey);
+            if (_state == State.Idle)
+            {
+                Wave();
+            }
+        }
 
-			_state = State.Waving;
+        void Wave()
+        {
+            Log.InfoFormat("Player {0} starts waving", assignedKey);
 
-			// Start animation
+            _state = State.Waving;
 
-			AudioService.instance.Play(GetOrderDrinkAudioId(id));
+            // Start animation
+            anim.SetTrigger("Wave");
 
-			Invoke("OnWavingFinished", WAVE_DURATION);
-		}
+            AudioService.instance.Play(GetOrderDrinkAudioId(id));
 
-		void OnWavingFinished()
-		{
-			Log.InfoFormat("Player {0} has finished waving", assignedKey);
-			_state = State.Idle;
-		}
+            Invoke("OnWavingFinished", WAVE_DURATION);
+        }
 
-		public void ServeDrink()
-		{
-			drinksServed += 1;
-			lastDrinkServed = DateTime.Now;
+        void OnWavingFinished()
+        {
+            Log.InfoFormat("Player {0} has finished waving", assignedKey);
+            _state = State.Idle;
+            anim.SetTrigger("Idle");
+        }
 
-			_state = State.DrinkServing;
+        public void ServeDrink()
+        {
+            drinksServed += 1;
+            lastDrinkServed = DateTime.Now;
 
-			Log.InfoFormat("Player {0} gets served a drink (total={1})", assignedKey, drinksServed);
+            _state = State.DrinkServing;
 
-			Invoke("OnDrinkServingFinished", WAVE_DURATION);
-		}
+            Log.InfoFormat("Player {0} gets served a drink (total={1})", assignedKey, drinksServed);
 
-		void OnDrinkServingFinished()
-		{
-			Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
-			_state = State.Idle;
-		}
+            Invoke("OnDrinkServingFinished", SERVE_DRINK_DURATION);
+        }
 
-		AudioId GetOrderDrinkAudioId(int playerId)
-		{
-			switch (playerId)
-			{
-				case 0:
-				default:
-					return AudioId.WaveCustomer01;
-				case 1:
-					return AudioId.WaveCustomer02;
-				case 2:
-					return AudioId.WaveCustomer03;
-				case 3:
-					return AudioId.WaveCustomer04;
-				case 4:
-					return AudioId.WaveCustomer05;
-			}
-		}
-	}
+        void OnDrinkServingFinished()
+        {
+            Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
+            _state = State.Idle;
+            anim.SetTrigger("Idle");
+        }
+
+        AudioId GetOrderDrinkAudioId(int playerId)
+        {
+            switch (playerId)
+            {
+                case 0:
+                default:
+                    return AudioId.WaveCustomer01;
+                case 1:
+                    return AudioId.WaveCustomer02;
+                case 2:
+                    return AudioId.WaveCustomer03;
+                case 3:
+                    return AudioId.WaveCustomer04;
+                case 4:
+                    return AudioId.WaveCustomer05;
+            }
+        }
+    }
 }
