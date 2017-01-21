@@ -4,11 +4,14 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using GGJ2017.CrossContext.Services;
+using UnityEngine.SceneManagement;
 
 namespace GGJ2017.Game
 {
 	class GameManager : MonoBehaviour
-	{	
+	{
+		const string BAR_SCENE_ID = "bar";
+
 		public enum State
 		{
 			None = 0,
@@ -36,6 +39,11 @@ namespace GGJ2017.Game
 
 			Log.logHandler = Debug.Log;
 			AudioService.instance.Setup();
+		}
+
+		void Start()
+		{
+			SceneManager.LoadScene(BAR_SCENE_ID, LoadSceneMode.Additive);
 		}
 
 		void OnContinue()
