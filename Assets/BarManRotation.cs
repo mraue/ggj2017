@@ -4,8 +4,8 @@
 public class BarManRotation : MonoBehaviour {
 
 	public GameObject[] rotationPoints;
-	bool ignore;
-	int index = 0;
+	public bool ignore;
+	public int index = 0;
 	int direction = 1;
 
 	public int attentionTime = 60 * 2;
