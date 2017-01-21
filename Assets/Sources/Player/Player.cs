@@ -43,7 +43,6 @@ namespace GGJ2017.Game
 
         public void ShouldWave()
         {
-            Log.InfoFormat("Player {0} should wave", assignedKey);
             if (_state == State.Idle)
             {
                 Wave();
