@@ -30,6 +30,8 @@ namespace GGJ2017.Game
 
 		public PlayerScoreView scoreView;
 
+		public TextMesh playerInfo;
+
         public int id;// Zero base, player one has id=0
 
         public State state { get { return _state; } }
@@ -41,6 +43,7 @@ namespace GGJ2017.Game
         {
             _state = State.Idle;
             anim = GetComponent<Animator>();
+			playerInfo.text = assignedKey.ToString();
         }
 
 		public void Reset()
@@ -49,6 +52,7 @@ namespace GGJ2017.Game
 			scoreView.SetScoreAmount(0);
 			lastDrinkServed = DateTime.MinValue;
 			_state = State.Idle;
+			playerInfo.text = assignedKey.ToString();
 		}
 
         public void ShouldWave()
@@ -69,6 +73,7 @@ namespace GGJ2017.Game
             }
 
             _state = State.Waving;
+			playerInfo.text = "";
 
             // Start animation
             anim.SetTrigger("Wave");
@@ -93,6 +98,8 @@ namespace GGJ2017.Game
                 _state = State.Idle;
                 anim.SetTrigger("Idle");
             }
+
+			playerInfo.text = assignedKey.ToString();
         }
 
         public void ServeDrink()
@@ -108,6 +115,8 @@ namespace GGJ2017.Game
             Log.InfoFormat("Player {0} gets served a drink (total={1})", assignedKey, drinksServed);
 
             Invoke("OnDrinkServingFinished", SERVE_DRINK_DURATION);
+
+			playerInfo.text = "";
         }
 
         void OnDrinkServingFinished()
@@ -115,6 +124,7 @@ namespace GGJ2017.Game
             Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
             _state = State.Idle;
             anim.SetTrigger("Idle");
+			playerInfo.text = assignedKey.ToString();
         }
 
         AudioId GetOrderDrinkAudioId(int playerId)
