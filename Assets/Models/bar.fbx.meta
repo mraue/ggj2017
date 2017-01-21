@@ -18,6 +18,13 @@ ModelImporter:
     100020: Cube.008
     100022: Cube.009
     100024: Lamp
+    100026: Cube.010
+    100028: BarTop
+    100030: Cabinet
+    100032: Counter
+    100034: LampBase
+    100036: LampCone
+    100038: Shelf
     400000: //RootNode
     400002: Camera
     400004: Cube
@@ -31,6 +38,13 @@ ModelImporter:
     400020: Cube.008
     400022: Cube.009
     400024: Lamp
+    400026: Cube.010
+    400028: BarTop
+    400030: Cabinet
+    400032: Counter
+    400034: LampBase
+    400036: LampCone
+    400038: Shelf
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -41,6 +55,13 @@ ModelImporter:
     2300014: Cube.007
     2300016: Cube.008
     2300018: Cube.009
+    2300020: Cube.010
+    2300022: BarTop
+    2300024: Cabinet
+    2300026: Counter
+    2300028: LampBase
+    2300030: LampCone
+    2300032: Shelf
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.002
@@ -51,12 +72,26 @@ ModelImporter:
     3300014: Cube.007
     3300016: Cube.008
     3300018: Cube.009
+    3300020: Cube.010
+    3300022: BarTop
+    3300024: Cabinet
+    3300026: Counter
+    3300028: LampBase
+    3300030: LampCone
+    3300032: Shelf
     4300000: Cube.009
     4300002: Cube.003
     4300004: Cube.008
     4300006: Cube.007
     4300008: Cube.001
     4300010: Cube
+    4300012: Cube.010
+    4300014: LampBase
+    4300016: LampCone
+    4300018: Shelf
+    4300020: Cabinet
+    4300022: Counter
+    4300024: BarTop
   materials:
     importMaterials: 1
     materialName: 0
