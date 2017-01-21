@@ -11,5 +11,3 @@ EditorBuildSettings:
     path: Assets/Scenes/BarInterior.unity
   - enabled: 1
     path: Assets/Scenes/BartenderAndCustomers.unity
-  - enabled: 1
-    path: Assets/Scenes/bar.unity
