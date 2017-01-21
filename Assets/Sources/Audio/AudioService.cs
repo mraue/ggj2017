@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CreatingDust.GGJ2017.CrossContext.Services
+namespace GGJ2017.CrossContext.Services
 {
     public class AudioService : IAudioService
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using CreatingDust.Shared.Logging;
+using GGJ2017.Shared.Logging;
 using UnityEngine;
 using DG.Tweening;
 
-namespace CreatingDust.GGJ2017.CrossContext.Services
+namespace GGJ2017.CrossContext.Services
 {
     class AudioServiceComponent : MonoBehaviour
     {

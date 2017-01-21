@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace CreatingDust.GGJ2017.CrossContext.Services
+namespace GGJ2017.CrossContext.Services
 {
     [CustomEditor(typeof(AudioLibrary))]
     public class AudioLibraryEditor : Editor

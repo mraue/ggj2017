@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CreatingDust.Shared.Logging
+namespace GGJ2017.Shared.Logging
 {
     public static class Log
     {
