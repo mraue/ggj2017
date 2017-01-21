@@ -63,7 +63,7 @@ namespace GGJ2017.Game
 
 				if (secondsRunning < GAME_DURATION)
 				{
-					timerViewController.label.text = string.Format("{0:D2}", (int)(GAME_DURATION - secondsRunning));
+					timerViewController.label.text = string.Format("{0:D2}", (int)(GAME_DURATION - secondsRunning) + 1);
 				}
 				else
 				{
