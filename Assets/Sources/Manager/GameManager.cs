@@ -44,6 +44,8 @@ namespace GGJ2017.Game
 		void Start()
 		{
 			SceneManager.LoadScene(BAR_SCENE_ID, LoadSceneMode.Additive);
+
+			_state = State.StartScreen;
 		}
 
 		void OnContinue()
