@@ -4,32 +4,15 @@
     {
         None = 0,
 
-        UIContinueButtonPressed = 1,
-        UIButtonPressed = 2,
-        UICoinAdded = 3,
+		WaveCustomer01 = 101,
+		WaveCustomer02 = 102,
+		WaveCustomer03 = 103,
+		WaveCustomer04 = 104,
+		WaveCustomer05 = 105,
+		WaveCustomer06 = 106,
 
-        GameZombieAttacks = 100,
-        GameHeroHeartbeat = 102,
-        GameZombieKilled = 103,
-        GameDrawLine = 120,
-        GameResolveItems = 125,
-        GameNewWave = 130,
-        GameSuperTriggeredDynamite = 140,
-        GameSuperTriggeredDissolveColors = 141,
-        GameSpecialTriggered = 150,
-        GameMatch00 = 160,
-        GameMatch01 = 161,
-        GameMatch02 = 162,
-        GameMatch03 = 163,
-        GameMatch04 = 164,
-        GameMatch05 = 165,
-        GameMatch06 = 166,
-        GameMatch07 = 167,
-        GameMatch08 = 168,
+		BarBackground = 201,
 
-        GameGameOver = 190,
-
-        BackgroundMain = 200,
-        BackgroundGame = 201,
+		ServeDrink = 301,
     }
 }

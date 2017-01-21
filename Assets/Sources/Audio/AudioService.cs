@@ -6,6 +6,21 @@ namespace GGJ2017.CrossContext.Services
 {
     public class AudioService : IAudioService
     {
+		public static AudioService instance
+		{
+			get
+			{				
+				if (_instance == null)
+				{
+					_instance = new AudioService();
+					_instance.Setup();
+				}
+
+				return _instance;
+			}
+		}
+		static AudioService _instance;
+
         const string KEY_AUDIO_SERVICE_DATA = "audioServiceData";
         const string KEY_FX_ENABLED = "fxEnabled";
         const string KEY_MUSIC_ENABLED = "musicEnabled";

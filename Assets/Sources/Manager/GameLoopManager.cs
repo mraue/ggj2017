@@ -3,6 +3,7 @@ using GGJ2017.Shared.Logging;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using GGJ2017.CrossContext.Services;
 
 namespace GGJ2017.Game
 {
@@ -11,16 +12,6 @@ namespace GGJ2017.Game
 		public Player[] players;
 
 		public bool acceptingInput;
-
-		void Awake()
-		{
-			Setup();
-		}
-
-		void Setup()
-		{
-			Log.logHandler = Debug.Log;
-		}
 
 		void Update()
 		{
