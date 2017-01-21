@@ -57,6 +57,8 @@ public class BarManRotation : MonoBehaviour
 
     void LateUpdate()
     {
+		return;
+
         if (ignore)
         {
             return;

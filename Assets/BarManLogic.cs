@@ -13,12 +13,12 @@ public class BarManLogic : MonoBehaviour
 
     void Update()
     {
-        if (Random.Range(0f, 500f) < 1f)
-        {
-            ani.SetTrigger("Dance");
-            BroadcastMessage("IngnoreRotation");
-            StartCoroutine(Idle());
-        }
+        //if (Random.Range(0f, 500f) < 1f)
+        //{
+        //    ani.SetTrigger("Dance");
+        //    BroadcastMessage("IngnoreRotation");
+        //    StartCoroutine(Idle());
+        //}
     }
 
     IEnumerator Idle()
@@ -27,5 +27,4 @@ public class BarManLogic : MonoBehaviour
         ani.SetTrigger("Idle");
         BroadcastMessage("DontIngnoreRotation");
     }
-
 }
