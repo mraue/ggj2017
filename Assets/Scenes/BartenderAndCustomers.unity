@@ -447,12 +447,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &472296605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -736,12 +736,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &715454433
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -818,12 +818,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &733337877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -960,12 +960,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &794615401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1306,12 +1306,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &1363585336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1903,12 +1903,12 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
-  m_FontStyle: 0
+  m_FontStyle: 3
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 74fe189b7373b41e09e28bb20e9f4a42, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294902015
 --- !u!23 &1744222969
 MeshRenderer:
   m_ObjectHideFlags: 0
