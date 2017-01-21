@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -689,16 +689,10 @@ MonoBehaviour:
       outSlope: 2
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.45133016
-      value: 0.8757941
-      inSlope: 0.16900569
-      outSlope: 0.16900569
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.67025614
-      value: 0.5815372
-      inSlope: 5.861877
-      outSlope: 5.861877
+      time: 0.522274
+      value: 0.87227213
+      inSlope: 0.6981271
+      outSlope: 0.6981271
       tangentMode: 0
     - serializedVersion: 2
       time: 0.99938273
@@ -709,7 +703,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  LookAtThreshhold: 0.3
+  LookAtThreshhold: 0.9
 --- !u!1 &715454431
 GameObject:
   m_ObjectHideFlags: 0
