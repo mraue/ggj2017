@@ -46,6 +46,8 @@ namespace GGJ2017.Game
 			SceneManager.LoadScene(BAR_SCENE_ID, LoadSceneMode.Additive);
 
 			_state = State.StartScreen;
+
+			AudioService.instance.SetBackground(AudioId.BarBackground);
 		}
 
 		void OnContinue()
