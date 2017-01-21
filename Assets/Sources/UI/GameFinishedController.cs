@@ -8,9 +8,21 @@ namespace GGJ2017.Game
 {
 	class GameFinishedController : MonoBehaviour
 	{
+		public Action onContinue;
+
 		public void Continue()
 		{
-			
+			onContinue();
+		}
+
+		public void Show()
+		{
+
+		}
+
+		public void Hide()
+		{
+
 		}
 	}
 }

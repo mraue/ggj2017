@@ -13,17 +13,6 @@ namespace GGJ2017.Game
 
 		public bool acceptingInput;
 
-		void Start()
-		{
-			Setup();
-		}
-
-		void Setup()
-		{
-			Log.logHandler = Debug.Log;
-			AudioService.instance.Setup();
-		}
-
 		void Update()
 		{
 			if(acceptingInput)
