@@ -3,6 +3,7 @@ using GGJ2017.Shared.Logging;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using GGJ2017.CrossContext.Services;
 
 namespace GGJ2017.Game
 {
@@ -24,6 +25,8 @@ namespace GGJ2017.Game
 		public int drinksServed;
 
 		public DateTime lastDrinkServed;
+
+		public int id;// Zero base, player one has id=0
 
 		public State state { get { return _state; } }
 		State _state;
@@ -50,6 +53,8 @@ namespace GGJ2017.Game
 
 			// Start animation
 
+			AudioService.instance.Play(GetOrderDrinkAudioId(id));
+
 			Invoke("OnWavingFinished", WAVE_DURATION);
 		}
 
@@ -75,6 +80,24 @@ namespace GGJ2017.Game
 		{
 			Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
 			_state = State.Idle;
+		}
+
+		AudioId GetOrderDrinkAudioId(int playerId)
+		{
+			switch (playerId)
+			{
+				case 0:
+				default:
+					return AudioId.WaveCustomer01;
+				case 1:
+					return AudioId.WaveCustomer02;
+				case 2:
+					return AudioId.WaveCustomer03;
+				case 3:
+					return AudioId.WaveCustomer04;
+				case 4:
+					return AudioId.WaveCustomer05;
+			}
 		}
 	}
 }

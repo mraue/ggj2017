@@ -3,6 +3,7 @@ using GGJ2017.Shared.Logging;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using GGJ2017.CrossContext.Services;
 
 namespace GGJ2017.Game
 {
@@ -15,6 +16,7 @@ namespace GGJ2017.Game
 		void Awake()
 		{
 			Setup();
+			AudioService.instance.Setup();
 		}
 
 		void Setup()
