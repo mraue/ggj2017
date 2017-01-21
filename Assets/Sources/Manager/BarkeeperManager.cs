@@ -80,7 +80,7 @@ namespace GGJ2017.Game
 
 				slerpInterpolation = slerpCurve.Evaluate(progress);
 
-				head.transform.rotation = Quaternion.Slerp(oldRotation, newRotation, progress);
+				head.transform.rotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
 
 				if (_currentTurnDuration >= _turnDuration)
 				{
