@@ -24,7 +24,23 @@ public class BarManRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int playerID = 0; playerID < rotationPoints.Length; playerID++)
+        {
+            Debug.DrawLine(transform.position, rotationPoints[playerID].transform.position, Color.cyan);
 
+            float dot = Vector3.Dot(GetCorrectedForwardRotation(),
+                (rotationPoints[playerID].transform.position - transform.position).normalized);
+        }
+
+        Debug.DrawRay(transform.position, GetCorrectedForwardRotation() * 5, Color.green);
+        Debug.DrawRay(transform.position, Quaternion.Euler(0, 90 * (1 - LookAtThreshhold), 0) * GetCorrectedForwardRotation() * 5, Color.magenta);
+        Debug.DrawRay(transform.position, Quaternion.Euler(0, -90 * (1 - LookAtThreshhold), 0) * GetCorrectedForwardRotation() * 5, Color.magenta);
+
+    }
+
+    private Vector3 GetCorrectedForwardRotation()
+    {
+        return (Quaternion.Euler(0, -90, 0) * transform.forward).normalized;
     }
 
     int tick = 0;
@@ -67,11 +83,22 @@ public class BarManRotation : MonoBehaviour
         transform.rotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
     }
 
-    public bool IsLookintAtPlayer(int playerID)
+    public bool OnStartedWavinAtBartender(int playerID)
     {
-        if (ignore || index != playerID) return false;
+        if (ignore) return false;
 
-        return slerpInterpolation >= LookAtThreshhold;
+        float dot = Vector3.Dot(GetCorrectedForwardRotation(), (rotationPoints[playerID].transform.position - transform.position).normalized);
+
+        bool isLookingAtPlayer = dot >= LookAtThreshhold;
+
+        if (isLookingAtPlayer)
+        {
+            index = playerID;
+            tick = 0;
+        }
+        return isLookingAtPlayer;
 
     }
+
+
 }

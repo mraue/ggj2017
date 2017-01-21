@@ -477,14 +477,14 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0.45133016
       value: 0.8757941
-      inSlope: 0.16900569
-      outSlope: 0.16900569
+      inSlope: 0.12946843
+      outSlope: 0.12946843
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.67025614
-      value: 0.5815372
-      inSlope: 5.861877
-      outSlope: 5.861877
+      time: 0.7331226
+      value: 0.6967306
+      inSlope: -2.195537
+      outSlope: -2.195537
       tangentMode: 0
     - serializedVersion: 2
       time: 0.99938273
@@ -495,7 +495,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  LookAtThreshhold: 0.3
+  LookAtThreshhold: 0.9
 --- !u!1 &997785328 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100028, guid: c86af76270691c841aeddb44bf7df350, type: 3}
