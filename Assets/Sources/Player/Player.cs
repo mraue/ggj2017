@@ -43,6 +43,14 @@ namespace GGJ2017.Game
             anim = GetComponent<Animator>();
         }
 
+		public void Reset()
+		{
+			drinksServed = 0;
+			scoreView.SetScoreAmount(0);
+			lastDrinkServed = DateTime.MinValue;
+			_state = State.Idle;
+		}
+
         public void ShouldWave()
         {
             if (_state == State.Idle)
@@ -126,6 +134,5 @@ namespace GGJ2017.Game
                     return AudioId.WaveCustomer05;
             }
         }
-
     }
 }
