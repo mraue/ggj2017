@@ -20,7 +20,11 @@ namespace GGJ2017.Game
 
         public KeyCode assignedKey;
 
+        public BarManRotation BarMan;
+
         public int drinksServed;
+        public int wavesTillServing;
+        private int sucessfullWaves;
 
         public DateTime lastDrinkServed;
 
@@ -50,6 +54,11 @@ namespace GGJ2017.Game
         {
             Log.InfoFormat("Player {0} starts waving", assignedKey);
 
+            if (BarMan.IsLookintAtPlayer(id))
+            {
+                sucessfullWaves++;
+            }
+
             _state = State.Waving;
 
             // Start animation
@@ -58,13 +67,23 @@ namespace GGJ2017.Game
             AudioService.instance.Play(GetOrderDrinkAudioId(id));
 
             Invoke("OnWavingFinished", WAVE_DURATION);
+
         }
 
         void OnWavingFinished()
         {
             Log.InfoFormat("Player {0} has finished waving", assignedKey);
-            _state = State.Idle;
-            anim.SetTrigger("Idle");
+
+            if (sucessfullWaves >= wavesTillServing)
+            {
+                sucessfullWaves = 0;
+                ServeDrink();
+            }
+            else
+            {
+                _state = State.Idle;
+                anim.SetTrigger("Idle");
+            }
         }
 
         public void ServeDrink()
@@ -103,5 +122,6 @@ namespace GGJ2017.Game
                     return AudioId.WaveCustomer05;
             }
         }
+
     }
 }

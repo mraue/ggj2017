@@ -14,6 +14,8 @@ public class BarManRotation : MonoBehaviour
     [Range(0f, 1.0f)]
     public float slerpInterpolation = 0.1f;
     public AnimationCurve slerpCurve;
+    [Range(0f, 1.0f)]
+    public float LookAtThreshhold = 0.8f;
 
     void Start()
     {
@@ -63,5 +65,13 @@ public class BarManRotation : MonoBehaviour
         float progress = ((tick % attentionTime) * 1f) / attentionTime;
         slerpInterpolation = slerpCurve.Evaluate(progress);
         transform.rotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
+    }
+
+    public bool IsLookintAtPlayer(int playerID)
+    {
+        if (ignore || index != playerID) return false;
+
+        return slerpInterpolation >= LookAtThreshhold;
+
     }
 }

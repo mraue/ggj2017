@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Barman
   - Customer
+  - GameLoopManager
   layers:
   - Default
   - TransparentFX
