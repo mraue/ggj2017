@@ -3,16 +3,12 @@ using GGJ2017.Shared.Logging;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 namespace GGJ2017.Game
 {
-	class StartScreenController : ViewControllerBase
+	class TimerViewController : ViewControllerBase
 	{
-		public Action onStartGame;
-
-		public void StartGame()
-		{
-			onStartGame();
-		}
+		public Text label;
 	}
 }
