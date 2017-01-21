@@ -13,7 +13,7 @@ public class CustomerLogic : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(Barman.transform);
+
         if (Input.GetKeyDown(keypress))
         {
             float accuracy = Vector3.Dot(Barman.transform.forward, (transform.position - Barman.transform.position).normalized);

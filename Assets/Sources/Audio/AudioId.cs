@@ -12,6 +12,7 @@
 		WaveCustomer06 = 106,
 
 		BarBackground = 201,
+		StartScreenBackground = 202,
 
 		ServeDrink = 301,
     }
