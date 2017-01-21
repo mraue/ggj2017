@@ -6,23 +6,13 @@ using System;
 
 namespace GGJ2017.Game
 {
-	class StartScreenController : MonoBehaviour
+	class StartScreenController : ViewControllerBase
 	{
 		public Action onStartGame;
 
 		public void StartGame()
 		{
 			onStartGame();
-		}
-
-		public void Show()
-		{
-			gameObject.SetActive(true);
-		}
-
-		public void Hide()
-		{
-			gameObject.SetActive(false);
 		}
 	}
 }

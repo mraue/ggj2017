@@ -7,7 +7,7 @@ public class CustomerLogic : MonoBehaviour
     public int SucessfullPressesForBeer;
     private int sucessfullPresses;
     [Range(0.1f, 1.0f)]
-    public float AccuraczToHitSucessfuly = 0.8f;
+    public float AccuracyToHitSucessfuly = 0.8f;
 
     public static event System.Action<CustomerLogic> OnWavedEnough;
 
@@ -17,10 +17,15 @@ public class CustomerLogic : MonoBehaviour
         if (Input.GetKeyDown(keypress))
         {
             float accuracy = Vector3.Dot(Barman.transform.forward, (transform.position - Barman.transform.position).normalized);
-            Debug.Log(name + " pressed with accuracy: " + accuracy);
-            if (accuracy > AccuraczToHitSucessfuly)
+
+            if (accuracy > AccuracyToHitSucessfuly)
             {
+                Debug.Log("Sucessful press from " + name + " with accuracy: " + accuracy);
                 HandleSucessfullPress();
+            }
+            else
+            {
+                Debug.Log("Failed press from " + name + " with accuracy: " + accuracy);
             }
 
         }
