@@ -52,7 +52,7 @@ namespace GGJ2017.Game
 
 			_state = State.StartScreen;
 
-			AudioService.instance.SetBackground(AudioId.BarBackground);
+			AudioService.instance.SetBackground(AudioId.StartScreenBackground);
 		}
 
 		void Update()
@@ -91,6 +91,8 @@ namespace GGJ2017.Game
 		{
 			if (_state == State.StartScreen)
 			{
+				AudioService.instance.SetBackground(AudioId.BarBackground);
+
 				startScreenController.Hide();
 				timerViewController.Show();
 
