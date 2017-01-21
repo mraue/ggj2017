@@ -17,12 +17,12 @@ namespace GGJ2017.Game
 
 		public void Show()
 		{
-
+			gameObject.SetActive(true);
 		}
 
 		public void Hide()
 		{
-
+			gameObject.SetActive(false);
 		}
 	}
 }
