@@ -1,25 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CustomerLogic : MonoBehaviour {
-    private Animator ani;
+public class CustomerLogic : MonoBehaviour
+{
     public KeyCode keypress;
-	// Use this for initialization
-	void Start () {
-        ani = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(keypress)) {
-            ani.SetTrigger("Wave");
+    public Transform Barman;
+    public int SucessfullPressesForBeer;
+    private int sucessfullPresses;
+    [Range(0.1f, 1.0f)]
+    public float AccuracyToHitSucessfuly = 0.8f;
+
+    public static event System.Action<CustomerLogic> OnWavedEnough;
+
+    void Update()
+    {
+
+        if (Input.GetKeyDown(keypress))
+        {
+            float accuracy = Vector3.Dot(Barman.transform.forward, (transform.position - Barman.transform.position).normalized);
+
+            if (accuracy > AccuracyToHitSucessfuly)
+            {
+                Debug.Log("Sucessful press from " + name + " with accuracy: " + accuracy);
+                HandleSucessfullPress();
+            }
+            else
+            {
+                Debug.Log("Failed press from " + name + " with accuracy: " + accuracy);
+            }
 
         }
-        if (Input.GetKeyUp(keypress))
-        {
-            ani.SetTrigger("Idle");
 
+    }
+
+    private void HandleSucessfullPress()
+    {
+        sucessfullPresses++;
+
+        if (sucessfullPresses >= SucessfullPressesForBeer)
+        {
+            sucessfullPresses = 0;
+
+            if (OnWavedEnough != null)
+            {
+                OnWavedEnough(this);
+            }
         }
     }
 }
