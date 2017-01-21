@@ -28,6 +28,8 @@ namespace GGJ2017.Game
 
         public DateTime lastDrinkServed;
 
+		public PlayerScoreView scoreView;
+
         public int id;// Zero base, player one has id=0
 
         public State state { get { return _state; } }
@@ -40,6 +42,14 @@ namespace GGJ2017.Game
             _state = State.Idle;
             anim = GetComponent<Animator>();
         }
+
+		public void Reset()
+		{
+			drinksServed = 0;
+			scoreView.SetScoreAmount(0);
+			lastDrinkServed = DateTime.MinValue;
+			_state = State.Idle;
+		}
 
         public void ShouldWave()
         {
@@ -88,6 +98,9 @@ namespace GGJ2017.Game
         public void ServeDrink()
         {
             drinksServed++;
+
+			scoreView.SetScoreAmount(drinksServed);
+
             lastDrinkServed = DateTime.Now;
 
             _state = State.DrinkServing;
@@ -121,6 +134,5 @@ namespace GGJ2017.Game
                     return AudioId.WaveCustomer05;
             }
         }
-
     }
 }

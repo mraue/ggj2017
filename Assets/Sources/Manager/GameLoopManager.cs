@@ -48,7 +48,7 @@ namespace GGJ2017.Game
         {
             foreach (Player player in players)
             {
-                player.drinksServed = 0;
+				player.Reset();
             }
         }
     }

@@ -47,7 +47,7 @@ namespace GGJ2017.Game
             startScreenController.onStartGame += OnStartGame;
             gameFinishedController.onContinue += OnContinue;
 
-            //Log.logHandler = Debug.Log;
+            Log.logHandler = Debug.Log;
             AudioService.instance.Setup();
         }
 
