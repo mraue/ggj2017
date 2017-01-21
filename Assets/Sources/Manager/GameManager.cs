@@ -10,7 +10,9 @@ namespace GGJ2017.Game
 {
 	class GameManager : MonoBehaviour
 	{
-		const string BAR_SCENE_ID = "bar";
+		const string SCENE_ID_BAR_PLAYERS = "bar";
+		const string SCENE_ID_BAR_INTERIOR = "BarScene";
+
 		const float GAME_DURATION = 20f;
 
 		public enum State
@@ -21,12 +23,16 @@ namespace GGJ2017.Game
 			EndScreen,
 		}
 
+		List<string> _scenesToLoad = new List<string> { SCENE_ID_BAR_PLAYERS, SCENE_ID_BAR_INTERIOR };
+
 		public GameLoopManager gameLoopManager;
 
 		public StartScreenController startScreenController;
 		public GameFinishedController gameFinishedController;
 
 		public TimerViewController timerViewController;
+
+		public ResultsView resultsView;
 
 		State _state;
 
@@ -48,7 +54,10 @@ namespace GGJ2017.Game
 
 		void Start()
 		{
-			SceneManager.LoadScene(BAR_SCENE_ID, LoadSceneMode.Additive);
+			foreach (var sceneId in _scenesToLoad)
+			{				
+				SceneManager.LoadScene(sceneId, LoadSceneMode.Additive);
+			}
 
 			_state = State.StartScreen;
 
@@ -109,11 +118,14 @@ namespace GGJ2017.Game
 
 		public void OnGameFinished()
 		{			
+			gameLoopManager.acceptingInput = false;
+
+			resultsView.Show(gameLoopManager.GetHighscoreData());
+
 			timerViewController.Hide();
 			gameFinishedController.Show();
 
 			_state = State.EndScreen;
-			gameLoopManager.acceptingInput = false;
 		}
 	}
 }
