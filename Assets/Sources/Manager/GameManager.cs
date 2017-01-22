@@ -54,7 +54,7 @@ namespace GGJ2017.Game
 
             SceneManager.sceneLoaded += OnSceneLoaded;
 
-            Log.logHandler = Debug.Log;
+            //Log.logHandler = Debug.Log;
             AudioService.instance.Setup();
         }
 
