@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823018c08e61a4c76a2a68dbf18dcb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barkeeperManager: {fileID: 100793113}
   players:
   - {fileID: 493930478}
   - {fileID: 332685109}
@@ -299,7 +300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedKey: 102
-  BarMan: {fileID: 0}
   drinksServed: 0
   wavesTillServing: 1
   scoreView: {fileID: 1519440990}
@@ -354,6 +354,7 @@ Transform:
   m_Children:
   - {fileID: 1019293093}
   - {fileID: 805381320}
+  - {fileID: 936136868}
   m_Father: {fileID: 27511965}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -371,7 +372,7 @@ MonoBehaviour:
   _state: 0
   head: {fileID: 27511966}
   rotationUpdater: {fileID: 27511967}
-  lookAtTargets: {fileID: 1019293094}
+  lookAtTargets: {fileID: 936136869}
   slerpInterpolation: 0.1
   slerpCurve:
     serializedVersion: 2
@@ -392,6 +393,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   moveToTargets: {fileID: 805381321}
+  customers:
+  - {fileID: 1363585333}
+  - {fileID: 794615398}
+  - {fileID: 472296602}
+  - {fileID: 1744222966}
+  - {fileID: 733337875}
 --- !u!1001 &242542475
 Prefab:
   m_ObjectHideFlags: 0
@@ -489,7 +496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedKey: 115
-  BarMan: {fileID: 0}
   drinksServed: 0
   wavesTillServing: 1
   scoreView: {fileID: 483867800}
@@ -792,7 +798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedKey: 97
-  BarMan: {fileID: 0}
   drinksServed: 0
   wavesTillServing: 1
   scoreView: {fileID: 242542476}
@@ -1161,6 +1166,54 @@ Transform:
   m_Father: {fileID: 1019293093}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &936136867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 936136868}
+  - component: {fileID: 936136869}
+  m_Layer: 0
+  m_Name: LookAtTargetsTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936136868
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936136867}
+  m_LocalRotation: {x: -0, y: -0.000000029802315, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 100793112}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936136869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936136867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a16817690cf64b62b07bb40a97745d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 2
+  targets:
+  - {fileID: 1363585333}
+  - {fileID: 794615398}
+  - {fileID: 1363585333}
+  duration: 0
+  currentDuration: 0
+  currentTarget: {fileID: 0}
 --- !u!1 &943974506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedKey: 103
-  BarMan: {fileID: 0}
   drinksServed: 0
   wavesTillServing: 1
   scoreView: {fileID: 1111097728}
@@ -2151,7 +2203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedKey: 100
-  BarMan: {fileID: 0}
   drinksServed: 0
   wavesTillServing: 1
   scoreView: {fileID: 1916518288}

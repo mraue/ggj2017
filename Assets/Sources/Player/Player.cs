@@ -20,7 +20,7 @@ namespace GGJ2017.Game
 
         public KeyCode assignedKey;
 
-        public BarManRotation BarMan;
+        //public BarManRotation BarMan;
 
         public int drinksServed;
         public int wavesTillServing;
@@ -33,6 +33,8 @@ namespace GGJ2017.Game
 		public TextMesh playerInfo;
 
         public int id;// Zero base, player one has id=0
+
+		public event Action<int> onStartedWaving = delegate { };
 
         public State state { get { return _state; } }
         State _state;
@@ -67,10 +69,10 @@ namespace GGJ2017.Game
         {
             Log.InfoFormat("Player {0} starts waving", assignedKey);
 
-            if (BarMan.OnStartedWavinAtBartender(id))
-            {
-                sucessfullWaves++;
-            }
+            //if (BarMan.OnStartedWavinAtBartender(id))
+            //{
+            //    sucessfullWaves++;
+            //}
 
             _state = State.Waving;
 			playerInfo.text = "";
@@ -80,8 +82,9 @@ namespace GGJ2017.Game
 
             AudioService.instance.Play(GetOrderDrinkAudioId(id));
 
-            Invoke("OnWavingFinished", WAVE_DURATION);
+			onStartedWaving(id);
 
+            Invoke("OnWavingFinished", WAVE_DURATION);
         }
 
         void OnWavingFinished()
