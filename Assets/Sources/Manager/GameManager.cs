@@ -11,6 +11,7 @@ namespace GGJ2017.Game
     {
         const string SCENE_ID_BAR_PLAYERS = "BartenderAndCustomers";
         const string SCENE_ID_BAR_INTERIOR = "BarInterior";
+		const string SCENE_ID_CROWD = "Crowd";
 
         const float GAME_DURATION = 90f;
 
@@ -22,7 +23,11 @@ namespace GGJ2017.Game
             EndScreen,
         }
 
+		#if UNITY_WEBGL
         List<string> _scenesToLoad = new List<string> { SCENE_ID_BAR_INTERIOR, SCENE_ID_BAR_PLAYERS };
+		#else
+		List<string> _scenesToLoad = new List<string> { SCENE_ID_BAR_INTERIOR, SCENE_ID_BAR_PLAYERS, SCENE_ID_CROWD };
+		#endif
 
         public GameLoopManager gameLoopManager;
 
