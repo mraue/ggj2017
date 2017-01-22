@@ -1387,6 +1387,8 @@ MonoBehaviour:
   - {fileID: 909674140}
   - {fileID: 1473522624}
   - {fileID: 5697678}
+  - {fileID: 1473522624}
+  - {fileID: 5697678}
   duration: 0
   currentDuration: 0
   currentTarget: {fileID: 0}
