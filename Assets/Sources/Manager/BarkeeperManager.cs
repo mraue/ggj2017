@@ -27,6 +27,7 @@ namespace GGJ2017.Game
 		State _state;
 
 		public GameObject head;
+		public RotationLateUpdater roationUpdater;
 
 		public List<GameObject> lookAtTargets;
 
@@ -58,7 +59,7 @@ namespace GGJ2017.Game
 			_currentLookAtTargets.Shuffle();
 		}
 
-		void LateUpdate()
+		void Update()
 		{
 			UpdateLookingDirection();
 		}
@@ -80,7 +81,9 @@ namespace GGJ2017.Game
 
 				slerpInterpolation = slerpCurve.Evaluate(progress);
 
-				head.transform.rotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
+				var targetRotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
+
+				roationUpdater.newRotation = targetRotation;
 
 				if (_currentTurnDuration >= _turnDuration)
 				{
