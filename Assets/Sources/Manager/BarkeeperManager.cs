@@ -12,14 +12,14 @@ namespace GGJ2017.Game
 	{
 		const int LOOK_AT_TARGETS_MULTIPLIER = 2;
 
-		const float TURN_DURATION_MINIMUM = 1f;
-		const float TURN_DURATION_MAXIMUM = 3f;
+		const float TURN_DURATION_MINIMUM = 0.7f;
+		const float TURN_DURATION_MAXIMUM = 2f;
 
 		const float STATE_IDLE_MINIMUM = 1f;
 		const float STATE_IDLE_MAXIMUM = 2f;
 
-		const float STATE_MOVING_MINIMUM = 1f;
-		const float STATE_MOVING_MAXIMUM = 2f;
+		const float STATE_MOVING_MINIMUM = 1.5f;
+		const float STATE_MOVING_MAXIMUM = 3f;
 
 		public enum State
 		{
