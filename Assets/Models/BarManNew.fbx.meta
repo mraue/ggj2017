@@ -1,0 +1,621 @@
+fileFormatVersion: 2
+guid: 659644eaad8bb444ea465dacfd4ce08a
+timeCreated: 1485052051
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm.L
+    100002: Arm.R
+    100004: BarMan
+    100006: BarManAmature
+    100008: //RootNode
+    100010: Bone
+    100012: Bone.011
+    100014: Bone.011_end
+    100016: Bone.012
+    100018: Bone.012_end
+    100020: Bone01
+    100022: Bone02
+    100024: Bone03
+    100026: Bone04
+    100028: Bone06
+    100030: Bone_end
+    100032: Calf
+    100034: Calf.002
+    100036: Eye.L
+    100038: Eye.L_end
+    100040: Eye.R
+    100042: Eye.R_end
+    100044: finger1.L
+    100046: finger1.R
+    100048: finger2.L
+    100050: finger2.L_end
+    100052: finger2.R
+    100054: finger2.R_end
+    100056: foot
+    100058: foot.002
+    100060: foot.002_end
+    100062: foot_end
+    100064: FootIK.L
+    100066: FootIK.L_end
+    100068: FootIK.R
+    100070: FootIK.R_end
+    100072: Forearm.L
+    100074: Forearm.R
+    100076: HAND-IK.L
+    100078: HAND-IK.L_end
+    100080: HAND-IK.R
+    100082: HAND-IK.R_end
+    100084: HAND.L
+    100086: HAND.L.001
+    100088: HAND.L.001_end
+    100090: HAND.R
+    100092: HAND.R.001
+    100094: HAND.R.001_end
+    100096: Head
+    100098: Hip.L
+    100100: Hip.R
+    100102: Neck
+    100104: Shoulder.L
+    100106: Shoulder.R
+    100108: Thigh
+    100110: Thigh.002
+    400000: Arm.L
+    400002: Arm.R
+    400004: BarMan
+    400006: BarManAmature
+    400008: //RootNode
+    400010: Bone
+    400012: Bone.011
+    400014: Bone.011_end
+    400016: Bone.012
+    400018: Bone.012_end
+    400020: Bone01
+    400022: Bone02
+    400024: Bone03
+    400026: Bone04
+    400028: Bone06
+    400030: Bone_end
+    400032: Calf
+    400034: Calf.002
+    400036: Eye.L
+    400038: Eye.L_end
+    400040: Eye.R
+    400042: Eye.R_end
+    400044: finger1.L
+    400046: finger1.R
+    400048: finger2.L
+    400050: finger2.L_end
+    400052: finger2.R
+    400054: finger2.R_end
+    400056: foot
+    400058: foot.002
+    400060: foot.002_end
+    400062: foot_end
+    400064: FootIK.L
+    400066: FootIK.L_end
+    400068: FootIK.R
+    400070: FootIK.R_end
+    400072: Forearm.L
+    400074: Forearm.R
+    400076: HAND-IK.L
+    400078: HAND-IK.L_end
+    400080: HAND-IK.R
+    400082: HAND-IK.R_end
+    400084: HAND.L
+    400086: HAND.L.001
+    400088: HAND.L.001_end
+    400090: HAND.R
+    400092: HAND.R.001
+    400094: HAND.R.001_end
+    400096: Head
+    400098: Hip.L
+    400100: Hip.R
+    400102: Neck
+    400104: Shoulder.L
+    400106: Shoulder.R
+    400108: Thigh
+    400110: Thigh.002
+    4300000: BarMan
+    7400000: BarManAmature|BarManAmatureAction
+    7400002: BarManAmature|BarTopAction
+    7400004: BarManAmature|CabinetAction
+    7400006: BarManAmature|Cube.009Action
+    7400008: BarManAmature|Cube.010Action
+    7400010: BarManAmature|CubeAction
+    7400012: BarManAmature|Dance
+    7400014: BarManAmature|Idle
+    7400016: BarManAmature|LampBaseAction
+    7400018: BarManAmature|Pouring
+    7400020: BarManAmature|ShelfAction
+    9500000: //RootNode
+    13700000: BarMan
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BarManAmature|Dance
+      takeName: BarManAmature|Dance
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BarMan
+        weight: 1
+      - path: BarManAmature
+        weight: 1
+      - path: BarManAmature/Bone01
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012/Bone.012_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L/Eye.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R/Eye.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L/finger2.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001/HAND.L.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R/finger2.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001/HAND.R.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011/Bone.011_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot/foot_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone/Bone_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002/foot.002_end
+        weight: 1
+      - path: BarManAmature/FootIK.L
+        weight: 1
+      - path: BarManAmature/FootIK.L/FootIK.L_end
+        weight: 1
+      - path: BarManAmature/FootIK.R
+        weight: 1
+      - path: BarManAmature/FootIK.R/FootIK.R_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.L
+        weight: 1
+      - path: BarManAmature/HAND-IK.L/HAND-IK.L_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.R
+        weight: 1
+      - path: BarManAmature/HAND-IK.R/HAND-IK.R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BarManAmature|Idle
+      takeName: BarManAmature|Idle
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BarMan
+        weight: 1
+      - path: BarManAmature
+        weight: 1
+      - path: BarManAmature/Bone01
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012/Bone.012_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L/Eye.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R/Eye.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L/finger2.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001/HAND.L.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R/finger2.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001/HAND.R.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011/Bone.011_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot/foot_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone/Bone_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002/foot.002_end
+        weight: 1
+      - path: BarManAmature/FootIK.L
+        weight: 1
+      - path: BarManAmature/FootIK.L/FootIK.L_end
+        weight: 1
+      - path: BarManAmature/FootIK.R
+        weight: 1
+      - path: BarManAmature/FootIK.R/FootIK.R_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.L
+        weight: 1
+      - path: BarManAmature/HAND-IK.L/HAND-IK.L_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.R
+        weight: 1
+      - path: BarManAmature/HAND-IK.R/HAND-IK.R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BarManAmature|Pouring
+      takeName: BarManAmature|Pouring
+      firstFrame: 0
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BarMan
+        weight: 1
+      - path: BarManAmature
+        weight: 1
+      - path: BarManAmature/Bone01
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone.012/Bone.012_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.L/Eye.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Bone04/Neck/Bone06/Head/Eye.R/Eye.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/finger1.L/finger2.L/finger2.L_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.L/Arm.L/Forearm.L/HAND.L/HAND.L.001/HAND.L.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/finger1.R/finger2.R/finger2.R_end
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001
+        weight: 1
+      - path: BarManAmature/Bone01/Bone02/Bone03/Shoulder.R/Arm.R/Forearm.R/HAND.R/HAND.R.001/HAND.R.001_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/Bone.011/Bone.011_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.L/Thigh/Calf/foot/foot_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/Bone/Bone_end
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002
+        weight: 1
+      - path: BarManAmature/Bone01/Hip.R/Thigh.002/Calf.002/foot.002/foot.002_end
+        weight: 1
+      - path: BarManAmature/FootIK.L
+        weight: 1
+      - path: BarManAmature/FootIK.L/FootIK.L_end
+        weight: 1
+      - path: BarManAmature/FootIK.R
+        weight: 1
+      - path: BarManAmature/FootIK.R/FootIK.R_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.L
+        weight: 1
+      - path: BarManAmature/HAND-IK.L/HAND-IK.L_end
+        weight: 1
+      - path: BarManAmature/HAND-IK.R
+        weight: 1
+      - path: BarManAmature/HAND-IK.R/HAND-IK.R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
