@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 225069563}
   - component: {fileID: 225069569}
   - component: {fileID: 225069568}
+  - component: {fileID: 225069570}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -696,6 +697,17 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &225069570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225069562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d34852b5903bf43b0b2c29e85f4375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300736679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,9 +5860,10 @@ GameObject:
   - component: {fileID: 1990434108}
   - component: {fileID: 1990434107}
   - component: {fileID: 1990434106}
+  - component: {fileID: 1990434110}
   m_Layer: 0
   m_Name: Quad
-  m_TagString: Untagged
+  m_TagString: BarLogo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5920,6 +5933,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1990434110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990434105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8786af90002fe47b7e8a897999b006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1991005560
 GameObject:
   m_ObjectHideFlags: 0

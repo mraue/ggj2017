@@ -33,9 +33,14 @@ namespace GGJ2017.Game
 
         public ResultsView resultsView;
 
+        private BarLogo barBarLogo;
+
         State _state;
 
         DateTime _gameStarted;
+
+        public static event Action OnGameStarted;
+        public static event Action OnMainMenuStarted;
 
         void Awake()
         {
@@ -47,8 +52,22 @@ namespace GGJ2017.Game
             startScreenController.onStartGame += OnStartGame;
             gameFinishedController.onContinue += OnContinue;
 
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
             Log.logHandler = Debug.Log;
             AudioService.instance.Setup();
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            if (scene.name == SCENE_ID_BAR_INTERIOR)
+            {
+                barBarLogo = GameObject.FindGameObjectWithTag("BarLogo").GetComponent<BarLogo>();
+            }
+            else if (scene.name == SCENE_ID_BAR_PLAYERS)
+            {
+                gameLoopManager = GameObject.FindGameObjectWithTag("GameLoopManager").GetComponent<GameLoopManager>();
+            }
         }
 
         void Start()
@@ -67,17 +86,21 @@ namespace GGJ2017.Game
         {
             if (_state == State.Running)
             {
-                var secondsRunning = DateTime.Now.Subtract(_gameStarted).TotalSeconds;
+                double secondsRunning = DateTime.Now.Subtract(_gameStarted).TotalSeconds;
 
                 if (secondsRunning < GAME_DURATION)
                 {
-                    timerViewController.label.text = string.Format("{0:D2}", (int)(GAME_DURATION - secondsRunning) + 1);
+                    timerViewController.clockFill.fillAmount = Remap((float)secondsRunning, 0, GAME_DURATION, 0, 1);
                 }
                 else
                 {
                     OnGameFinished();
                 }
             }
+        }
+        public static float Remap(float value, float from1, float to1, float from2, float to2)
+        {
+            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
         }
 
         void OnContinue()
@@ -86,8 +109,10 @@ namespace GGJ2017.Game
             {
                 gameFinishedController.Hide();
                 startScreenController.Show();
+                barBarLogo.OnMainMenu();
 
                 _state = State.StartScreen;
+                if (OnMainMenuStarted != null) OnMainMenuStarted.Invoke();
             }
             else
             {
@@ -107,9 +132,12 @@ namespace GGJ2017.Game
                 _state = State.Running;
                 _gameStarted = DateTime.Now;
 
-                gameLoopManager = GameObject.FindGameObjectWithTag("GameLoopManager").GetComponent<GameLoopManager>();
                 gameLoopManager.Reset();
                 gameLoopManager.acceptingInput = true;
+                barBarLogo.OnMainMenu();
+                barBarLogo.OnGameStart();
+
+                if (OnGameStarted != null) OnGameStarted.Invoke();
             }
             else
             {
