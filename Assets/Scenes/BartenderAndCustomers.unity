@@ -399,6 +399,7 @@ MonoBehaviour:
   - {fileID: 472296602}
   - {fileID: 1744222966}
   - {fileID: 733337875}
+  viewConeHalfAngle: 20
 --- !u!1001 &242542475
 Prefab:
   m_ObjectHideFlags: 0
@@ -658,7 +659,7 @@ GameObject:
   - component: {fileID: 472296605}
   - component: {fileID: 472296604}
   m_Layer: 0
-  m_Name: PlayerInfo (1)
+  m_Name: PlayerInfo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,7 +906,7 @@ GameObject:
   - component: {fileID: 733337877}
   - component: {fileID: 733337876}
   m_Layer: 0
-  m_Name: PlayerInfo (3)
+  m_Name: PlayerInfo4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1016,7 @@ GameObject:
   - component: {fileID: 794615401}
   - component: {fileID: 794615400}
   m_Layer: 0
-  m_Name: PlayerInfo (2)
+  m_Name: PlayerInfo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1537,7 +1538,7 @@ GameObject:
   - component: {fileID: 1363585336}
   - component: {fileID: 1363585335}
   m_Layer: 0
-  m_Name: PlayerInfo
+  m_Name: PlayerInfo0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2035,7 +2036,7 @@ GameObject:
   - component: {fileID: 1744222969}
   - component: {fileID: 1744222968}
   m_Layer: 0
-  m_Name: PlayerInfo (2)
+  m_Name: PlayerInfo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
