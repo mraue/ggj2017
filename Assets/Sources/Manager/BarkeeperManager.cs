@@ -56,6 +56,7 @@ namespace GGJ2017.Game
 		float _stateCurrentDuration;
 
 		Quaternion _startingRotation;
+		Vector3 _startingPositionMovement;
 
 		public void CustomerStartedWaving(int id)
 		{	
@@ -99,9 +100,12 @@ namespace GGJ2017.Game
 						_state = State.Moving;
 						_stateDuration = UnityEngine.Random.Range(STATE_MOVING_MINIMUM, STATE_MOVING_MAXIMUM);
 
+						_startingPositionMovement = movementAnchor.transform.position;
+
 						moveToTargets.NextTarget();
 						moveToTargets.currentDuration = 0f;
 						moveToTargets.duration = _stateDuration;
+
 						break;
 						
 				}
@@ -121,6 +125,9 @@ namespace GGJ2017.Game
 		{
 			moveToTargets.currentDuration += Time.deltaTime;
 			var progress = moveToTargets.currentDuration / moveToTargets.duration;
+			var pos = movementAnchor.transform.position;
+			pos.z = Vector3.Lerp(_startingPositionMovement, moveToTargets.currentTarget.transform.position, progress).z;
+			movementAnchor.transform.position = pos;
 		}
 
 		void UpdateLookingDirection()
