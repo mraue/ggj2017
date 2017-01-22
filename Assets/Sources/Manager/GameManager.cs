@@ -12,7 +12,7 @@ namespace GGJ2017.Game
         const string SCENE_ID_BAR_PLAYERS = "BartenderAndCustomers";
         const string SCENE_ID_BAR_INTERIOR = "BarInterior";
 
-        const float GAME_DURATION = 60f;
+        const float GAME_DURATION = 90f;
 
         public enum State
         {
