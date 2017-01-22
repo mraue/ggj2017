@@ -11,20 +11,27 @@ namespace GGJ2017.Game
 	class BarkeeperManager : MonoBehaviour
 	{
 		const int LOOK_AT_TARGETS_MULTIPLIER = 2;
+
 		const float TURN_DURATION_MINIMUM = 1f;
 		const float TURN_DURATION_MAXIMUM = 2f;
+
+		const float STATE_IDLE_MINIMUM = 1f;
+		const float STATE_IDLE_MAXIMUM = 2f;
+
+		const float STATE_MOVING_MINIMUM = 1f;
+		const float STATE_MOVING_MAXIMUM = 2f;
 
 		public enum State
 		{
 			None = 0,
 			Idle,
-			Walking,
+			Moving,
 			Dancing,
 			ServingCustomer,
 		}
 
 		public State state { get { return _state; } }
-		State _state;
+		public State _state;
 
 		public GameObject head;
 		public RotationLateUpdater rotationUpdater;
@@ -35,6 +42,11 @@ namespace GGJ2017.Game
 		public float slerpInterpolation = 0.1f;
 		public AnimationCurve slerpCurve;
 
+		public ActionTargets moveToTargets;
+
+		float _stateDuration;
+		float _stateCurrentDuration;
+
 		void Start()
 		{
 			InitializeNewTurn();
@@ -42,7 +54,35 @@ namespace GGJ2017.Game
 
 		void Update()
 		{
+			UpdateState();
 			UpdateLookingDirection();
+		}
+
+		void UpdateState()
+		{
+			_stateCurrentDuration += Time.deltaTime;
+
+			if (_stateCurrentDuration > _stateDuration)
+			{				
+				switch (UnityEngine.Random.Range(0, 2))
+				{
+					default:
+					case 0:
+						_state = State.Idle;
+						_stateDuration = UnityEngine.Random.Range(STATE_IDLE_MINIMUM, STATE_IDLE_MAXIMUM);
+						break;
+					case 1:
+						_state = State.Moving;
+						_stateDuration = UnityEngine.Random.Range(STATE_MOVING_MINIMUM, STATE_MOVING_MAXIMUM);
+
+						moveToTargets.NextTarget();
+						moveToTargets.currentDuration = 0f;
+						moveToTargets.duration = _stateDuration;
+						break;
+						
+				}
+				_stateCurrentDuration = 0f;
+			}
 		}
 
 		void UpdateLookingDirection()
