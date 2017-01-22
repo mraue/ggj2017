@@ -13,7 +13,7 @@ namespace GGJ2017.Game
 		const int LOOK_AT_TARGETS_MULTIPLIER = 2;
 
 		const float TURN_DURATION_MINIMUM = 1f;
-		const float TURN_DURATION_MAXIMUM = 2f;
+		const float TURN_DURATION_MAXIMUM = 3f;
 
 		const float STATE_IDLE_MINIMUM = 1f;
 		const float STATE_IDLE_MAXIMUM = 2f;
@@ -44,6 +44,8 @@ namespace GGJ2017.Game
 
 		public ActionTargets moveToTargets;
 
+		public GameObject movementAnchor;
+
 		public List<GameObject> customers;
 
 		public float viewConeHalfAngle = 20f;
@@ -52,6 +54,8 @@ namespace GGJ2017.Game
 
 		float _stateDuration;
 		float _stateCurrentDuration;
+
+		Quaternion _startingRotation;
 
 		public void CustomerStartedWaving(int id)
 		{	
@@ -101,8 +105,22 @@ namespace GGJ2017.Game
 						break;
 						
 				}
+
 				_stateCurrentDuration = 0f;
 			}
+
+			switch(_state)
+			{
+				case State.Moving:
+					UpdateMovement();
+					break;
+			}
+		}
+
+		void UpdateMovement()
+		{
+			moveToTargets.currentDuration += Time.deltaTime;
+			var progress = moveToTargets.currentDuration / moveToTargets.duration;
 		}
 
 		void UpdateLookingDirection()
@@ -110,8 +128,6 @@ namespace GGJ2017.Game
 			if (_state != State.ServingCustomer)
 			{
 				lookAtTargets.currentDuration += Time.deltaTime;
-
-				var oldRotation = head.transform.rotation;
 
 				head.transform.LookAt(lookAtTargets.currentTarget.transform);
 				head.transform.rotation = head.transform.rotation;// * Quaternion.Euler(0f, 90f, 0f);
@@ -122,7 +138,7 @@ namespace GGJ2017.Game
 
 				slerpInterpolation = slerpCurve.Evaluate(progress);
 
-				var targetRotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
+				var targetRotation = Quaternion.Slerp(_startingRotation, newRotation, slerpInterpolation);
 
 				rotationUpdater.newRotation = targetRotation;
 
@@ -135,6 +151,8 @@ namespace GGJ2017.Game
 
 		void InitializeNewTurn()
 		{
+			_startingRotation = head.transform.rotation;
+
 			lookAtTargets.currentDuration = 0f;
 			lookAtTargets.duration = UnityEngine.Random.Range(TURN_DURATION_MINIMUM, TURN_DURATION_MAXIMUM);
 			lookAtTargets.NextTarget();

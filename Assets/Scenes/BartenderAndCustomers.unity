@@ -372,7 +372,7 @@ MonoBehaviour:
   _state: 0
   head: {fileID: 27511966}
   rotationUpdater: {fileID: 27511967}
-  lookAtTargets: {fileID: 936136869}
+  lookAtTargets: {fileID: 1019293094}
   slerpInterpolation: 0.1
   slerpCurve:
     serializedVersion: 2
@@ -393,6 +393,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   moveToTargets: {fileID: 805381321}
+  movementAnchor: {fileID: 0}
   customers:
   - {fileID: 1363585333}
   - {fileID: 794615398}
