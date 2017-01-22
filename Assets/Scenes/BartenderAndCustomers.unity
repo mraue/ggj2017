@@ -276,13 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 662121868}
-  roationUpdater: {fileID: 662121869}
-  lookAtTargets:
-  - {fileID: 1096090872}
-  - {fileID: 1838179514}
-  - {fileID: 783298515}
-  - {fileID: 1702056744}
-  - {fileID: 1573795044}
+  rotationUpdater: {fileID: 662121869}
+  lookAtTargets: {fileID: 1052833259}
   slerpInterpolation: 0.1
   slerpCurve:
     serializedVersion: 2
@@ -1022,6 +1017,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1052833258}
+  - component: {fileID: 1052833259}
   m_Layer: 0
   m_Name: LookAtTargets
   m_TagString: Untagged
@@ -1047,6 +1043,27 @@ Transform:
   m_Father: {fileID: 295799638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052833259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052833257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a16817690cf64b62b07bb40a97745d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 2
+  targets:
+  - {fileID: 1096090872}
+  - {fileID: 1838179514}
+  - {fileID: 783298515}
+  - {fileID: 1702056744}
+  - {fileID: 1573795044}
+  duration: 0
+  currentDuration: 0
+  currentTarget: {fileID: 0}
 --- !u!1 &1074978042 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: c86af76270691c841aeddb44bf7df350, type: 3}

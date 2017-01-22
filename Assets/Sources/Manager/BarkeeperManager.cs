@@ -27,36 +27,17 @@ namespace GGJ2017.Game
 		State _state;
 
 		public GameObject head;
-		public RotationLateUpdater roationUpdater;
+		public RotationLateUpdater rotationUpdater;
 
-		public List<GameObject> lookAtTargets;
+		public ActionTargets lookAtTargets;
 
 		[Range(0f, 1.0f)]
 		public float slerpInterpolation = 0.1f;
 		public AnimationCurve slerpCurve;
 
-		List<GameObject> _currentLookAtTargets = new List<GameObject>();
-
-		float _turnDuration;
-		float _currentTurnDuration;
-
-		Transform _currentLookAtTarget;
-
 		void Start()
 		{
 			InitializeNewTurn();
-		}
-
-		void InitializeLookAtTargets()
-		{
-			_currentLookAtTargets.Clear();
-
-			for (int i = 0; i < LOOK_AT_TARGETS_MULTIPLIER; i++)
-			{
-				_currentLookAtTargets.AddRange(lookAtTargets);
-			}
-
-			_currentLookAtTargets.Shuffle();
 		}
 
 		void Update()
@@ -68,24 +49,24 @@ namespace GGJ2017.Game
 		{
 			if (_state != State.ServingCustomer)
 			{
-				_currentTurnDuration += Time.deltaTime;
+				lookAtTargets.currentDuration += Time.deltaTime;
 
 				var oldRotation = head.transform.rotation;
 
-				head.transform.LookAt(_currentLookAtTarget);
+				head.transform.LookAt(lookAtTargets.currentTarget.transform);
 				head.transform.rotation = head.transform.rotation * Quaternion.Euler(0f, 90f, 0f);
 
 				var newRotation = head.transform.rotation;
 
-				float progress = _currentTurnDuration / _turnDuration;
+				float progress = lookAtTargets.currentDuration / lookAtTargets.duration;
 
 				slerpInterpolation = slerpCurve.Evaluate(progress);
 
 				var targetRotation = Quaternion.Slerp(oldRotation, newRotation, slerpInterpolation);
 
-				roationUpdater.newRotation = targetRotation;
+				rotationUpdater.newRotation = targetRotation;
 
-				if (_currentTurnDuration >= _turnDuration)
+				if (lookAtTargets.currentDuration >= lookAtTargets.duration)
 				{
 					InitializeNewTurn();
 				}
@@ -94,25 +75,11 @@ namespace GGJ2017.Game
 
 		void InitializeNewTurn()
 		{
-			_currentTurnDuration = 0f;
+			lookAtTargets.currentDuration = 0f;
 
-			_turnDuration = UnityEngine.Random.Range(TURN_DURATION_MINIMUM, TURN_DURATION_MAXIMUM);
+			lookAtTargets.duration = UnityEngine.Random.Range(TURN_DURATION_MINIMUM, TURN_DURATION_MAXIMUM);
 
-			if (_currentLookAtTarget == null && _currentLookAtTargets.Count > 0)
-			{
-				_currentLookAtTarget = _currentLookAtTargets[0].transform;
-			}
-			else
-			{
-				if (_currentLookAtTargets.Count <= 1)
-				{
-					InitializeLookAtTargets();
-				}
-
-				_currentLookAtTargets.RemoveAt(0);
-
-				_currentLookAtTarget = _currentLookAtTargets[0].transform;
-			}
+			lookAtTargets.NextTarget();
 		}
 	}
 }
