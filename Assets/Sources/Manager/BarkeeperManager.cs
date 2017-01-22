@@ -10,10 +10,10 @@ namespace GGJ2017.Game
 {
 	class BarkeeperManager : MonoBehaviour
 	{
-		const float SERVE_DRINK_DURATION = 3f;
+		const float SERVE_DRINK_DURATION = 3.2f;
 
 		const float TURN_DURATION_MINIMUM = 0.7f;
-		const float TURN_DURATION_MAXIMUM = 2f;
+		const float TURN_DURATION_MAXIMUM = 1.8f;
 
 		const float STATE_IDLE_MINIMUM = 1f;
 		const float STATE_IDLE_MAXIMUM = 2f;
@@ -97,7 +97,6 @@ namespace GGJ2017.Game
 			{				
 				Log.InfoFormat("[BarkeeperManager::CustomerStartedWaving] Serving customer id={0}", id);
 
-				AudioService.instance.Play(AudioId.ServeDrink);
 				_activeCustomerId = id;
 				onServeDrink(id);
 
@@ -132,7 +131,7 @@ namespace GGJ2017.Game
 
 			if (_stateCurrentDuration > _stateDuration)
 			{				
-				switch (UnityEngine.Random.Range(0, 12))
+				switch (UnityEngine.Random.Range(0, 10))
 				{
 					default:
 					case 0:
@@ -196,6 +195,7 @@ namespace GGJ2017.Game
 			else if (!_serveCustomerAnimationSet)
 			{				
 				animator.SetTrigger(ANIMATION_ID_SERVE_CUSTOMER);
+				AudioService.instance.Play(AudioId.ServeDrink);
 				_serveCustomerAnimationSet = true;
 			}
 		}
