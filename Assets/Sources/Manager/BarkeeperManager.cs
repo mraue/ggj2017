@@ -55,7 +55,7 @@ namespace GGJ2017.Game
 
 		public void CustomerStartedWaving(int id)
 		{	
-			float dot = Vector3.Dot(GetCorrectedForwardRotation(), (customers[id].transform.position - transform.position).normalized);
+			float dot = Vector3.Dot(head.transform.forward.normalized, (customers[id].transform.position - transform.position).normalized);
 			var angle = Mathf.Acos(dot) * 180f / Math.PI;
 
 			Log.InfoFormat("[BarkeeperManager::CustomerStartedWaving] id={0}, dot={1}, angle={2}", id, dot, angle);
@@ -64,11 +64,6 @@ namespace GGJ2017.Game
 			{				
 				onServeDrink(id);
 			}
-		}
-
-		private Vector3 GetCorrectedForwardRotation()
-		{
-			return head.transform.forward.normalized;
 		}
 
 		void Start()
