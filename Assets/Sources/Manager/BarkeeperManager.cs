@@ -151,7 +151,7 @@ namespace GGJ2017.Game
 			}
 			else if(progress > 0.8f)
 			{
-				//movementAnchor.transform.rotation = Quaternion.Lerp(_endRotationMovement, _startingRotation, (progress - 0.8f) / 0.2f);
+				movementAnchor.transform.rotation = Quaternion.Lerp(_endRotationMovement, _startingRotationMovement, (progress - 0.8f) / 0.2f);
 			}
 		}
 
