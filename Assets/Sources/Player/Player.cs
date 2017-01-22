@@ -102,8 +102,6 @@ namespace GGJ2017.Game
         {
             drinksServed++;
 
-			scoreView.SetScoreAmount(drinksServed);
-
             lastDrinkServed = DateTime.Now;
 
             _state = State.DrinkServing;
@@ -118,8 +116,13 @@ namespace GGJ2017.Game
         void OnDrinkServingFinished()
         {
             Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
+
+			scoreView.SetScoreAmount(drinksServed);
+
             _state = State.Idle;
-            anim.SetTrigger("Idle");
+            
+			anim.SetTrigger("Idle");
+
 			playerInfo.text = assignedKey.ToString();
         }
 
