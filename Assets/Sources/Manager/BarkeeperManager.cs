@@ -94,7 +94,7 @@ namespace GGJ2017.Game
 				var oldRotation = head.transform.rotation;
 
 				head.transform.LookAt(lookAtTargets.currentTarget.transform);
-				head.transform.rotation = head.transform.rotation * Quaternion.Euler(0f, 90f, 0f);
+				head.transform.rotation = head.transform.rotation;// * Quaternion.Euler(0f, 90f, 0f);
 
 				var newRotation = head.transform.rotation;
 
