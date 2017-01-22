@@ -13,7 +13,7 @@ namespace GGJ2017.Game
 		const float SERVE_DRINK_DURATION = 3f;
 
 		const float TURN_DURATION_MINIMUM = 0.7f;
-		const float TURN_DURATION_MAXIMUM = 2f;
+		const float TURN_DURATION_MAXIMUM = 1.8f;
 
 		const float STATE_IDLE_MINIMUM = 1f;
 		const float STATE_IDLE_MAXIMUM = 2f;
@@ -132,7 +132,7 @@ namespace GGJ2017.Game
 
 			if (_stateCurrentDuration > _stateDuration)
 			{				
-				switch (UnityEngine.Random.Range(0, 12))
+				switch (UnityEngine.Random.Range(0, 10))
 				{
 					default:
 					case 0:
