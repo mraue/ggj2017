@@ -62,6 +62,7 @@ namespace GGJ2017.Game
 
 			if (angle <= viewConeHalfAngle)
 			{				
+				AudioService.instance.Play(AudioId.ServeDrink);
 				onServeDrink(id);
 			}
 		}
