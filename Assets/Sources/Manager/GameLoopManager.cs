@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GGJ2017.Shared.Logging;
 using UnityEngine;
 
 namespace GGJ2017.Game
@@ -24,6 +25,22 @@ namespace GGJ2017.Game
 			foreach (var player in players)
 			{
 				player.onStartedWaving += OnStartedWaving;
+			}
+
+			barkeeperManager.onServeDrink += OnServeDrink;
+		}
+
+		void OnServeDrink(int id)
+		{
+			var selectedPlayers = players.FindAll((obj) => obj.id == id);
+
+			if (selectedPlayers.Count == 1)
+			{
+				selectedPlayers[0].ServeDrink();
+			}
+			else
+			{
+				Log.ErrorFormat("[GameLoopManager::OnServeDrink] Failed to serve drink to player id={0}", id);
 			}
 		}
 

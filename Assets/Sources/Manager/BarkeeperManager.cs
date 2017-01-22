@@ -46,6 +46,8 @@ namespace GGJ2017.Game
 
 		public List<GameObject> customers;
 
+		public event Action<int> onServeDrink = delegate { };
+
 		float _stateDuration;
 		float _stateCurrentDuration;
 
@@ -54,6 +56,7 @@ namespace GGJ2017.Game
 			float dot = Vector3.Dot(GetCorrectedForwardRotation(), (customers[id].transform.position - transform.position).normalized);
 			var angle = Mathf.Acos(dot) * 180f / Math.PI;
 			Log.InfoFormat("[BarkeeperManager::CustomerStartedWaving] id={0}, dot={1}, angle={2}", id, dot, angle);
+			onServeDrink(id);
 		}
 
 		private Vector3 GetCorrectedForwardRotation()

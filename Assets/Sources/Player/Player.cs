@@ -20,8 +20,6 @@ namespace GGJ2017.Game
 
         public KeyCode assignedKey;
 
-        //public BarManRotation BarMan;
-
         public int drinksServed;
         public int wavesTillServing;
         private int sucessfullWaves;
@@ -68,11 +66,6 @@ namespace GGJ2017.Game
         void Wave()
         {
             Log.InfoFormat("Player {0} starts waving", assignedKey);
-
-            //if (BarMan.OnStartedWavinAtBartender(id))
-            //{
-            //    sucessfullWaves++;
-            //}
 
             _state = State.Waving;
 			playerInfo.text = "";
