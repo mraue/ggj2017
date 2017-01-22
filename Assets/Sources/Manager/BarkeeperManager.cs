@@ -57,6 +57,8 @@ namespace GGJ2017.Game
 
 		Quaternion _startingRotation;
 		Vector3 _startingPositionMovement;
+		Quaternion _startingRotationMovement;
+		Quaternion _endRotationMovement;
 
 		public void CustomerStartedWaving(int id)
 		{	
@@ -101,6 +103,7 @@ namespace GGJ2017.Game
 						_stateDuration = UnityEngine.Random.Range(STATE_MOVING_MINIMUM, STATE_MOVING_MAXIMUM);
 
 						_startingPositionMovement = movementAnchor.transform.position;
+						_startingRotationMovement = movementAnchor.transform.rotation;
 
 						moveToTargets.NextTarget();
 						moveToTargets.currentDuration = 0f;
@@ -124,10 +127,32 @@ namespace GGJ2017.Game
 		void UpdateMovement()
 		{
 			moveToTargets.currentDuration += Time.deltaTime;
+
 			var progress = moveToTargets.currentDuration / moveToTargets.duration;
 			var pos = movementAnchor.transform.position;
 			pos.z = Vector3.Lerp(_startingPositionMovement, moveToTargets.currentTarget.transform.position, progress).z;
+
 			movementAnchor.transform.position = pos;
+
+			var movementDistance = (movementAnchor.transform.position - _startingPositionMovement).magnitude;
+
+			if (movementDistance < 0.1f)
+			{				
+				return;
+			}
+
+			if (progress < 0.2f)
+			{
+				var currentRotation = movementAnchor.transform.rotation;
+				movementAnchor.transform.LookAt(moveToTargets.currentTarget.transform);
+				var finalRotation = movementAnchor.transform.rotation;
+				movementAnchor.transform.rotation = Quaternion.Lerp(_startingRotationMovement, finalRotation, progress / 0.2f);
+				_endRotationMovement = movementAnchor.transform.rotation;
+			}
+			else if(progress > 0.8f)
+			{
+				//movementAnchor.transform.rotation = Quaternion.Lerp(_endRotationMovement, _startingRotation, (progress - 0.8f) / 0.2f);
+			}
 		}
 
 		void UpdateLookingDirection()
