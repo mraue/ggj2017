@@ -132,7 +132,7 @@ namespace GGJ2017.Game
 
 			if (_stateCurrentDuration > _stateDuration)
 			{				
-				switch (UnityEngine.Random.Range(0, 10))
+				switch (UnityEngine.Random.Range(0, 12))
 				{
 					default:
 					case 0:
