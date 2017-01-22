@@ -9,15 +9,6 @@ namespace GGJ2017.Game
     {
         public ResultItemView[] results;
 
-        public List<GameLoopManager.HighscoreData> testData = new List<GameLoopManager.HighscoreData>();
-
-        private void Awake()
-        {
-            Show(testData);
-        }
-
-
-
         public void Show(List<GameLoopManager.HighscoreData> data)
         {
             var scoreGroups = data.GroupBy(x => x.score).OrderByDescending(x => x.First().score).ToArray();
@@ -34,17 +25,15 @@ namespace GGJ2017.Game
 
                     var scores = scoreGroups[i];
 
-                    string entrie = String.Empty;
+                    string entrie = string.Empty;
 
                     if (scores.Count() == 1)
                     {
-                        entrie = "Player ";
                         entrie += scores.First().name;
                         entrie += " got ";
                     }
                     else
                     {
-                        entrie = "Players ";
 
                         for (var scoreIndex = 0; scoreIndex < scores.Count(); scoreIndex++)
                         {
@@ -68,7 +57,7 @@ namespace GGJ2017.Game
 
                     if (scores.First().score.Equals("1", StringComparison.Ordinal))
                     {
-                        entrie += scores.First().score + "Drink!";
+                        entrie += scores.First().score + " Drink!";
                     }
                     else if (scores.First().score.Equals("0", StringComparison.Ordinal))
                     {

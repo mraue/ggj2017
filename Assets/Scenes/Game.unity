@@ -125,21 +125,6 @@ MonoBehaviour:
   - {fileID: 1631057649}
   - {fileID: 1204126931}
   - {fileID: 1457362619}
-  testData:
-  - name: A
-    score: 3
-  - name: B
-    score: 4
-  - name: C
-    score: 3
-  - name: D
-    score: 4
-  - name: E
-    score: 3
-  - name: F
-    score: 2
-  - name: G
-    score: 0
 --- !u!224 &105640076
 RectTransform:
   m_ObjectHideFlags: 0
@@ -161,7 +146,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 95}
-  m_SizeDelta: {x: 700, y: 598}
+  m_SizeDelta: {x: 1700, y: 598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105640077
 MonoBehaviour:
@@ -371,7 +356,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Player Key S got 7 points!
+  m_Text: Player A, S, D, F, and G got 5 drinks!
 --- !u!222 &509367905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -483,7 +468,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 709876492}
-  - component: {fileID: 709876493}
   - component: {fileID: 709876494}
   m_Layer: 5
   m_Name: ResultItem
@@ -509,28 +493,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -99}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 850, y: -99}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &709876493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114140203999742870, guid: 46fc36db16a6146ea9eebf6b4cf6ba43,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 709876491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 500
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!114 &709876494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,7 +862,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1204126929}
-  - component: {fileID: 1204126930}
   - component: {fileID: 1204126931}
   m_Layer: 5
   m_Name: ResultItem (3)
@@ -923,28 +887,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -399}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 850, y: -399}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1204126930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114140203999742870, guid: 46fc36db16a6146ea9eebf6b4cf6ba43,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1204126928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 300
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!114 &1204126931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Player Key A got 5 points!
+  m_Text: Player A, S, D, F, and G got 5 drinks!
 --- !u!222 &1280947108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1045,7 +990,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1457362620}
-  - component: {fileID: 1457362621}
   - component: {fileID: 1457362619}
   m_Layer: 5
   m_Name: ResultItem (4)
@@ -1084,28 +1028,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -499}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 850, y: -499}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1457362621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114140203999742870, guid: 46fc36db16a6146ea9eebf6b4cf6ba43,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457362618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 300
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!1 &1486106212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1156,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1631057647}
-  - component: {fileID: 1631057648}
   - component: {fileID: 1631057649}
   m_Layer: 5
   m_Name: ResultItem (2)
@@ -1257,28 +1181,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -299}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 850, y: -299}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1631057648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114140203999742870, guid: 46fc36db16a6146ea9eebf6b4cf6ba43,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1631057646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 300
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!114 &1631057649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,7 +1370,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Player Key G got 5 points!
+  m_Text: Player A, S, D, F, and G got 5 drinks!
 --- !u!222 &1744389981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1610,7 +1515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Player Key D got 8 points!
+  m_Text: Player A, S, D, F, and G got 5 drinks!
 --- !u!222 &1947321316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1688,7 +1593,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player Player Key F got 5 points!
+  m_Text: Player A, S, D, F, and G got 5 drinks!
 --- !u!222 &1976649905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1705,7 +1610,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1976869442}
-  - component: {fileID: 1976869443}
   - component: {fileID: 1976869444}
   m_Layer: 5
   m_Name: ResultItem (1)
@@ -1731,28 +1635,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -199}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: 850, y: -199}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1976869443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114140203999742870, guid: 46fc36db16a6146ea9eebf6b4cf6ba43,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1976869441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 300
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!114 &1976869444
 MonoBehaviour:
   m_ObjectHideFlags: 0
