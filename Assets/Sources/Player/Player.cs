@@ -9,6 +9,7 @@ namespace GGJ2017.Game
     {
         const float WAVE_DURATION = 3.0f;
         const float SERVE_DRINK_DURATION = 3.0f;
+		const float BLOCK_DURATION = 2.0f;
 
         public enum State
         {
@@ -82,6 +83,11 @@ namespace GGJ2017.Game
 
         void OnWavingFinished()
         {
+			if (_state == State.DrinkServing)
+			{
+				return;
+			}
+
             Log.InfoFormat("Player {0} has finished waving", assignedKey);
 
             if (sucessfullWaves >= wavesTillServing)
@@ -114,17 +120,22 @@ namespace GGJ2017.Game
         }
 
         void OnDrinkServingFinished()
-        {
-            Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
-
+        {            
 			scoreView.SetScoreAmount(drinksServed);
 
-            _state = State.Idle;
-            
 			anim.SetTrigger("Idle");
 
-			playerInfo.text = assignedKey.ToString();
+			Invoke("OnCanAcceptInputAgain", BLOCK_DURATION);
         }
+
+		void OnCanAcceptInputAgain()
+		{
+			Log.InfoFormat("Player {0} has finished getting a drink served", assignedKey);
+
+			_state = State.Idle;
+
+			playerInfo.text = assignedKey.ToString();
+		}
 
         AudioId GetOrderDrinkAudioId(int playerId)
         {
