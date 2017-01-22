@@ -97,7 +97,6 @@ namespace GGJ2017.Game
 			{				
 				Log.InfoFormat("[BarkeeperManager::CustomerStartedWaving] Serving customer id={0}", id);
 
-				AudioService.instance.Play(AudioId.ServeDrink);
 				_activeCustomerId = id;
 				onServeDrink(id);
 
@@ -196,6 +195,7 @@ namespace GGJ2017.Game
 			else if (!_serveCustomerAnimationSet)
 			{				
 				animator.SetTrigger(ANIMATION_ID_SERVE_CUSTOMER);
+				AudioService.instance.Play(AudioId.ServeDrink);
 				_serveCustomerAnimationSet = true;
 			}
 		}
