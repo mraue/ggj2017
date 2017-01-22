@@ -26,7 +26,8 @@ namespace GGJ2017.Game
 
 		const string ANIMATION_ID_IDLE = "Idle";
 		const string ANIMATION_ID_SERVE_CUSTOMER = "Pouring";
-		const string ANIMATION_ID_SERVE_DANCE = "Dance";
+		const string ANIMATION_ID_DANCE = "Dance";
+		const string ANIMATION_ID_WALK = "Walk";
 
 		public enum State
 		{
@@ -72,6 +73,7 @@ namespace GGJ2017.Game
 		Quaternion _endRotationMovement;
 
 		int _activeCustomerId;
+		bool _serveCustomerAnimationSet;
 
 		void Awake()
 		{
@@ -105,7 +107,9 @@ namespace GGJ2017.Game
 				_startingPositionMovement = movementAnchor.transform.position;
 				_startingRotationMovement = movementAnchor.transform.rotation;
 
-				animator.SetTrigger(ANIMATION_ID_SERVE_CUSTOMER);
+				animator.SetTrigger(ANIMATION_ID_WALK);
+
+				_serveCustomerAnimationSet = false;
 
 				_state = State.ServingCustomer;
 			}
@@ -149,12 +153,18 @@ namespace GGJ2017.Game
 						moveToTargets.currentDuration = 0f;
 						moveToTargets.duration = _stateDuration;
 
+						var movementDistance = (moveToTargets.currentTarget.transform.position - _startingPositionMovement).magnitude;
+
+						if (movementDistance > 1f)
+						{							
+							animator.SetTrigger(ANIMATION_ID_WALK);
+						}
+
 						break;
 					case 4:
-					case 5:
 						_state = State.Dancing;
 						_stateDuration = UnityEngine.Random.Range(STATE_DANCING_MINIMUM, STATE_DANCING_MAXIMUM);
-						animator.SetTrigger(ANIMATION_ID_SERVE_DANCE);
+						animator.SetTrigger(ANIMATION_ID_DANCE);
 						break;
 				}
 
@@ -176,12 +186,17 @@ namespace GGJ2017.Game
 		{
 			var progress = _stateCurrentDuration / _stateDuration;
 
-			if(progress <= 0.2f)
+			if(progress <= 0.3f)
 			{				
 				var pos = movementAnchor.transform.position;
-				pos.z = Vector3.Lerp(_startingPositionMovement, customers[_activeCustomerId].transform.position, progress / 0.2f).z;
+				pos.z = Vector3.Lerp(_startingPositionMovement, customers[_activeCustomerId].transform.position, progress / 0.3f).z;
 				movementAnchor.transform.position = pos;
-				movementAnchor.transform.rotation = Quaternion.Lerp(_startingRotationMovement, _defaultRotation, progress / 0.2f);
+				movementAnchor.transform.rotation = Quaternion.Lerp(_startingRotationMovement, _defaultRotation, progress / 0.3f);
+			}
+			else if (!_serveCustomerAnimationSet)
+			{				
+				animator.SetTrigger(ANIMATION_ID_SERVE_CUSTOMER);
+				_serveCustomerAnimationSet = true;
 			}
 		}
 

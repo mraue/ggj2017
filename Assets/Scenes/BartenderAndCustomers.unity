@@ -261,6 +261,21 @@ Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: 659644eaad8bb444ea465dacfd4ce08a,
     type: 3}
   m_PrefabInternal: {fileID: 27511964}
+--- !u!1 &27511970 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100028, guid: 659644eaad8bb444ea465dacfd4ce08a, type: 3}
+  m_PrefabInternal: {fileID: 27511964}
+--- !u!114 &27511971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27511970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd55dbd0c9c0047db929ec8e68e42a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &72598713
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,9 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  head: {fileID: 27511966}
-  rotationUpdater: {fileID: 27511967}
-  lookAtTargets: {fileID: 936136869}
+  head: {fileID: 27511970}
+  rotationUpdater: {fileID: 27511971}
+  lookAtTargets: {fileID: 1019293094}
   slerpInterpolation: 0.1
   slerpCurve:
     serializedVersion: 2
@@ -501,7 +516,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 254192512}
   m_LocalRotation: {x: -0, y: -0.000000029802315, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.76, z: 0.6}
+  m_LocalPosition: {x: 0, y: 0.97, z: 1.274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1019293093}
