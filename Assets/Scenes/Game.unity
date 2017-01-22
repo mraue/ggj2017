@@ -125,6 +125,21 @@ MonoBehaviour:
   - {fileID: 1631057649}
   - {fileID: 1204126931}
   - {fileID: 1457362619}
+  testData:
+  - name: A
+    score: 3
+  - name: B
+    score: 4
+  - name: C
+    score: 3
+  - name: D
+    score: 4
+  - name: E
+    score: 3
+  - name: F
+    score: 2
+  - name: G
+    score: 0
 --- !u!224 &105640076
 RectTransform:
   m_ObjectHideFlags: 0

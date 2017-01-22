@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GGJ2017.Game
@@ -7,13 +9,78 @@ namespace GGJ2017.Game
     {
         public ResultItemView[] results;
 
+        public List<GameLoopManager.HighscoreData> testData = new List<GameLoopManager.HighscoreData>();
+
+        private void Awake()
+        {
+            Show(testData);
+        }
+
+
+
         public void Show(List<GameLoopManager.HighscoreData> data)
         {
+            var scoreGroups = data.GroupBy(x => x.score).OrderByDescending(x => x.First().score).ToArray();
             for (int i = 0; i < results.Length && i < data.Count; i++)
             {
                 var item = results[i];
-                var highscore = data[i];
-                item.result = string.Format("Player {0} got {1} points!", highscore.name, highscore.score);
+                if (i >= scoreGroups.Length)
+                {
+                    item.gameObject.SetActive(false);
+                }
+                else
+                {
+                    item.gameObject.SetActive(true);
+
+                    var scores = scoreGroups[i];
+
+                    string entrie = String.Empty;
+
+                    if (scores.Count() == 1)
+                    {
+                        entrie = "Player ";
+                        entrie += scores.First().name;
+                        entrie += " got ";
+                    }
+                    else
+                    {
+                        entrie = "Players ";
+
+                        for (var scoreIndex = 0; scoreIndex < scores.Count(); scoreIndex++)
+                        {
+                            var highscoreData = scores.ElementAt(scoreIndex);
+                            if (scoreIndex == scores.Count() - 1)
+                            {
+                                entrie += " and " + highscoreData.name + " got ";
+                            }
+                            else if (scoreIndex == 0)
+                            {
+                                entrie += highscoreData.name;
+                            }
+                            else
+                            {
+                                entrie += ", " + highscoreData.name;
+                            }
+
+                        }
+
+                    }
+
+                    if (scores.First().score.Equals("1", StringComparison.Ordinal))
+                    {
+                        entrie += scores.First().score + "Drink!";
+                    }
+                    else if (scores.First().score.Equals("0", StringComparison.Ordinal))
+                    {
+                        entrie += "No Drinks!";
+                    }
+                    else
+                    {
+                        entrie += scores.First().score + " Drinks!";
+                    }
+
+                    item.result = entrie;
+                }
             }
         }
     }
