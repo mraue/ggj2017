@@ -10,7 +10,7 @@ namespace GGJ2017.Game
 {
 	class BarkeeperManager : MonoBehaviour
 	{
-		const float SERVE_DRINK_DURATION = 3f;
+		const float SERVE_DRINK_DURATION = 3.2f;
 
 		const float TURN_DURATION_MINIMUM = 0.7f;
 		const float TURN_DURATION_MAXIMUM = 1.8f;
