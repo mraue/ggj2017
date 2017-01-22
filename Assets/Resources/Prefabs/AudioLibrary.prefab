@@ -53,31 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 101
-    clip: {fileID: 8300000, guid: bd54d0b5240d96142a884bbee11a9fcf, type: 3}
+    clip: {fileID: 8300000, guid: dfb4a867ea4e8364cbf49d86bebece34, type: 3}
     volume: 1
   - id: 101
-    clip: {fileID: 8300000, guid: 70d57564d1e5fe046a271b72e7eda1b5, type: 3}
+    clip: {fileID: 8300000, guid: fe3a4b6e0a4294d4aa13d26bbbbbc8a3, type: 3}
     volume: 1
   - id: 101
-    clip: {fileID: 8300000, guid: 86aaf42bf73217143b42853dd0971116, type: 3}
+    clip: {fileID: 8300000, guid: 54cde32be4149d147a307840dddcc245, type: 3}
     volume: 1
   - id: 101
-    clip: {fileID: 8300000, guid: 02b391354b2d3ed4796c87e901ea1fc5, type: 3}
+    clip: {fileID: 8300000, guid: 26f6f556c2e890243a45c4c0dd3cb692, type: 3}
     volume: 1
   - id: 101
-    clip: {fileID: 8300000, guid: 08de21404e7ecf84badb86c5f8be53a9, type: 3}
-    volume: 1
-  - id: 101
-    clip: {fileID: 8300000, guid: 90014951d512a3645a7a2a8d156cc7ff, type: 3}
-    volume: 1
-  - id: 101
-    clip: {fileID: 8300000, guid: 8207f2f5bb29cbe4081f8c5dfe39bfe7, type: 3}
-    volume: 1
-  - id: 101
-    clip: {fileID: 8300000, guid: 61719d0f490f2354b8887ec31f54ab6f, type: 3}
-    volume: 1
-  - id: 101
-    clip: {fileID: 8300000, guid: 1b020a903ae50fa45912ba876564f71c, type: 3}
+    clip: {fileID: 8300000, guid: b8a2db66bfd5cc24a8117a2f081448f6, type: 3}
     volume: 1
   - id: 102
     clip: {fileID: 8300000, guid: 1a9a2ed9a3ef819428358c5209958635, type: 3}
@@ -135,13 +123,13 @@ MonoBehaviour:
     volume: 1
   - id: 301
     clip: {fileID: 8300000, guid: c73ed8aa6e010424a894d1ae15485ec3, type: 3}
-    volume: 1
+    volume: 0.8
   - id: 301
     clip: {fileID: 8300000, guid: fbc3745ecc1fab3409ba41f7d8207c15, type: 3}
-    volume: 1
+    volume: 0.8
   - id: 301
     clip: {fileID: 8300000, guid: 5e7f2be9b66893f478d786e0f575a9f6, type: 3}
-    volume: 1
+    volume: 0.8
   - id: 104
     clip: {fileID: 8300000, guid: 5f55d77a60b6fb343825a752a43ebc60, type: 3}
     volume: 1
@@ -189,7 +177,7 @@ MonoBehaviour:
     volume: 1
   - id: 201
     clip: {fileID: 8300000, guid: 9e3d6e2129afe214c88112b9a0a60c8f, type: 3}
-    volume: 1
+    volume: 0.8
   - id: 202
     clip: {fileID: 8300000, guid: a5b3779108f72fe44b651d7577fae539, type: 3}
-    volume: 0.725
+    volume: 0.8
