@@ -1,5 +1,5 @@
 
-![The main screen](https://github.com/mraue/ggj17/blob/master/screenshot.png)
+![The main screen](https://github.com/mraue/ggj2017/blob/master/screenshot.png)
 
 # Bario Cruiser
 
